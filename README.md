@@ -4,5 +4,5 @@ This repository contains code for an interactive information web app, created fo
 
 Name: Tom Jubin
 Name: Anshul Karanam
-Name:
+Name: Trevor Wong
 Name:
