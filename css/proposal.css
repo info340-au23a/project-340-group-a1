@@ -1,0 +1,25 @@
+/* formats the body section */
+body{
+    background-color:rgb(126, 176, 133);
+}
+
+/* formatting for title */
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* formatting for subsection headers */
+h2{
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* formatting for paragraph sections */
+p{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* bolds hyperlink when hovering over it */
+data-section li a:hover{
+    font-weight: bold;
+}
