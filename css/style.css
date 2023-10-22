@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: rgb(206, 228, 206);
+}
+
 /* navbar styling */
 nav {
     position: fixed;
@@ -30,13 +34,53 @@ nav img {
 nav a {
     color: beige;
     text-decoration: none;
-    font-family: "Public Sans", sans-serif
+    font-family: "Public Sans", sans-serif;
 }
 /* end of navbar styling */
 
 h1 {
     padding-top: 3rem;
+    font-family: "Outfit", sans-serif;
 }
+
+/* Styling for Homepage (index.html) content */
+.myTeam {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(224, 240, 230);
+    font-family: "Hind", sans-serif;
+    border: solid;
+    border-color: rgb(105, 179, 126);
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.myTeam h2 {
+    padding-right: 2rem;
+}
+
+.myTeam p {
+    padding: 1rem;
+}
+
+.dashboard {
+    background-color: rgb(224, 240, 230);
+    font-family: "Hind", sans-serif;
+    border: solid;
+    border-color: rgb(105, 179, 126);
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0px;
+}
+
+.dashboard h2 {
+    margin-top: 0;
+    padding-right: 2rem;
+}
+/*  End of Homepage (index.html) styling content */
 
 /* Styling for SMALL screens (598px+) */
 @media(min-width:598px){
