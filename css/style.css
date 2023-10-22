@@ -2,3 +2,74 @@
     box-sizing: border-box;
 }
 
+/* navbar styling */
+nav {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(46, 118, 53);
+    display: flex;
+}   
+
+nav ul {
+    display: flex;
+    padding-left: 0;
+}
+
+nav li{
+    display: inline-block;
+    width: 85px;
+    text-align: center;
+}
+
+nav img {
+    max-height: 50px;
+}
+
+nav a {
+    color: beige;
+    text-decoration: none;
+    font-family: "Public Sans", sans-serif
+}
+/* end of navbar styling */
+
+h1 {
+    padding-top: 3rem;
+}
+
+/* Styling for SMALL screens (598px+) */
+@media(min-width:598px){
+    nav ul {
+        padding-left: 40px;
+    }
+    nav li{
+        width: 100px;
+    } 
+}
+
+/* Styling for MEDIUM screens (768px+) */
+@media(min-width:768px){
+    nav li{
+        width: 160px;
+    } 
+}
+
+/* Styling for LARGE screens (992px+)
+@media(min-width:992px){
+
+} */
+
+/* Styling for EXTRA-LARGE screens (1200px+)
+@media(min-width:1200px){
+
+} */
+
+/* Hover rule for navbar */
+nav a:hover {
+    color: #fff585;
+    border-bottom: 0.8rem;
+    border-bottom: solid;
+    border-bottom-color: #fff585;
+    transition: 0.25s ease-out;
+}
