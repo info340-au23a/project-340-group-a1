@@ -4,8 +4,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Trevor Wong">
-        <meta name="description" content="INFO 340 Group A1 Project Main Page">
-        <title>340 Fantasy Football</title>
+        <meta name="description" content="INFO 340 Group A1 Project Login">
+        <title>340 Fantasy Football Log In</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Public+Sans|Outfit|Hind">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,35 +31,20 @@
                     <a href="players.html">Players</a>
                 </li>
             </ul>
-            <ul>
-                <li>
-                    <a href="login.html">Login</a>
-                </li>
-            </ul>
         </nav>
-        <header>
-            <h1>Fantasy Football</h1>
-        </header>
-       
-        <!-- main content -->
+        <h1>Login</h1>
         <main>
-            <div class="Homepage">
-                <div class="myTeam">
-                    <h2>My Team</h2>
-                    <p>Record</p>
-                    <p>Last Matchup</p>
-                    <p>Next Matchup</p>
+            <form>
+                <div class="login">
+                  <label for="email_input">Email:</label>
+                  <input id="email_input" type="email" name="email" placeholder="email@domain.com">
+                  <label for="password_input">Password:</label>
+                  <input id="password_input" type="password" name="password">
                 </div>
-                <div class="dashboard">
-                    <h2>Dashboard</h2>
-                </div>
-            </div>
-            
+                <button type="submit"><i class="fas fa-pencil-alt" aria-label="Submit"></i></button>
+              </form>
         </main>
 
-        <!-- footer content -->
-        <footer>
 
-        </footer>
+
     </body>
-</html>

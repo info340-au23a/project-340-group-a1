@@ -82,6 +82,18 @@ h1 {
 }
 /*  End of Homepage (index.html) styling content */
 
+/* Styling for login page */
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+.login input {
+    width: 20%;
+    margin-bottom: 1rem;
+}
+/* End of styling for login page */
+
 /* Styling for SMALL screens (598px+) */
 @media(min-width:598px){
     nav ul {
