@@ -100,14 +100,14 @@ h1 {
         padding-left: 40px;
     }
     nav li{
-        width: 100px;
+        width: 90px;
     } 
 }
 
 /* Styling for MEDIUM screens (768px+) */
 @media(min-width:768px){
     nav li{
-        width: 160px;
+        width: 120px;
     } 
 }
 
