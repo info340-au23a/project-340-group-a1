@@ -3,14 +3,98 @@
     <!-- Page Info -->
     <head>
         <meta charset="utf-8">
-        <meta name="author" content="INFO340-aaa">
-        <meta name="description" content="INFO 340 Group A1 Project">
-        <title>INFO 340 AA Group A Project</title>
+        <meta name="author" content="Trevor Wong">
+        <meta name="description" content="INFO 340 Group A1 Project Main Page">
+        <title>340 Fantasy Football</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Public+Sans|Outfit|Hind">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" type="image/x-icon" href="imgs/favicon.ico" />
     </head>
 
     <!-- Page Content -->
     <body>
+        <nav>
+            <!-- Page Logo -->
+            <a href="index.html"><img src="imgs/FantasyFootballLogo.png" alt="Home"></a>
+            <!-- tab to different pages -->
+            <ul>
+                <li>
+                    <a href="league.html">League</a>
+                </li>
+                <li>
+                    <a href="schedule.html">Schedule</a>
+                </li>
+                <li>
+                    <a href="matchup.html">Matchup</a>
+                </li>
+                <li>
+                    <a href="players.html">Players</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Fantasy Football</h1>
+        </header>
        
+        <!-- main content -->
+        <main>
+            <div class="Homepage">
+                <div class="myTeam">
+                    <h2>My Team</h2>
+                    <div class="myTeamSummary">
+                        <div class="myTeamRecord">
+                            <h3>Record</h3>
+                            <!-- add record here -->
+                            <p>4-2-0</p>
+                        </div>
+                        <div class="myTeamLastMatchup">
+                            <h3>Last Matchup</h3>
+                            <!-- add last matchup here -->
+                            <p>Team F</p>
+                        </div>
+                        <div class="myTeamNextMatchup">
+                            <h3>Next Matchup</h3>
+                            <!-- add next matchup here -->
+                            <p>Team J</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="dashboardContainer">
+                    <h2>Dashboard</h2>
+                    <div class="dashboard">
+                        <!-- Dash Tab links -->
+                        <div class="dash-tabs">
+                            <button class="dash-tablinks">Overview</button>
+                            <button class="dash-tablinks">Ranks</button>
+                            <button class="dash-tablinks">My Stats</button>
+                        </div>
+                        <!-- Dash Tab content -->
+                        <div id="Overview" class="dashcontent">
+                            <h3>Overview</h3>
+                            <p>Overview content (probably table)</p>
+                        </div>
+                        <div id="Ranks" class="dashcontent">
+                            <h3>Ranks</h3>
+                            <p>Ranks content (probably table)</p>
+                        </div>
+                        <div id="myStats" class="dashcontent">
+                            <h3>My Stats</h3>
+                            <p>My Stats content (probably table)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+
+        <!-- footer content -->
+        <footer>
+
+        </footer>
     </body>
 </html>

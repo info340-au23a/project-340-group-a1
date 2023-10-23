@@ -3,3 +3,177 @@
 }
 
 
+html {
+    background-color: rgb(206, 228, 206);
+}
+
+/* navbar styling */
+nav {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(46, 118, 53);
+    display: flex;
+}   
+
+nav ul {
+    display: flex;
+    padding-left: 0;
+}
+
+nav li{
+    display: inline-block;
+    width: 85px;
+    text-align: center;
+}
+
+nav img {
+    max-height: 50px;
+}
+
+nav a {
+    color: beige;
+    text-decoration: none;
+    font-family: "Public Sans", sans-serif;
+}
+/* end of navbar styling */
+
+h1 {
+    padding-top: 3rem;
+    font-family: "Outfit", sans-serif;
+}
+
+/* Styling for Homepage (index.html) content */
+.myTeam {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(224, 240, 230);
+    font-family: "Hind", sans-serif;
+    border: solid;
+    border-color: rgb(105, 179, 126);
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.myTeam h2 {
+    padding-right: 2rem;
+}
+
+.myTeamSummary {
+    display: flex;
+}
+
+.myTeamSummary div {
+    padding: 1rem;
+}
+
+.dashboardContainer {
+    background-color: rgb(224, 240, 230);
+    font-family: "Hind", sans-serif;
+    border: solid;
+    border-color: rgb(105, 179, 126);
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0px;
+}
+
+.dashboardContainer h2 {
+    margin-top: 0;
+    padding-right: 2rem;
+}
+
+.dashboard {
+    display: flex;
+}
+
+.dashboard div {
+    padding-left: 2rem;
+}
+
+/*  End of Homepage (index.html) styling content */
+
+/* Styling for login page */
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+.login input {
+    width: 20%;
+    margin-bottom: 1rem;
+}
+/* End of styling for login page */
+
+/* Styling for SMALL screens (598px+) */
+@media(min-width:598px){
+    nav ul {
+        padding-left: 40px;
+    }
+    nav li{
+        width: 90px;
+    } 
+}
+
+/* Styling for MEDIUM screens (768px+) */
+@media(min-width:768px){
+    nav li{
+        width: 120px;
+    } 
+}
+
+/* Styling for LARGE screens (992px+)
+@media(min-width:992px){
+
+} */
+
+/* Styling for EXTRA-LARGE screens (1200px+)
+@media(min-width:1200px){
+
+} */
+
+/* Hover rule for navbar */
+nav a:hover {
+    color: #fff585;
+    border-bottom: 0.8rem;
+    border-bottom: solid;
+    border-bottom-color: #fff585;
+    transition: 0.25s ease-out;
+}
+
+/* table styling */ 
+.Tschedule table {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+.Tschedule thead {
+    background-color: lightblue;
+}
+.Tschedule thead, th {
+    height: 2rem;
+    text-align: center;
+}
+.Tschedule th, td {
+    padding: 0.5em;
+    border-bottom: 1px solid #d3d3d3
+}
+.Tschedule td {
+    text-align: center;
+}
+.Tschedule tr:nth-child(even) {
+    background-color: #eee;
+}
+.Tschedule tbody tr:hover{
+    background-color: lightblue;
+}
