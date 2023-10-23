@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Public+Sans|Outfit|Hind">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" type="image/x-icon" href="imgs/favicon.ico" />
     </head>
 
     <!-- Page Content -->
@@ -46,16 +47,19 @@
                     <h2>My Team</h2>
                     <div class="myTeamSummary">
                         <div class="myTeamRecord">
-                            <p>Record</p>
+                            <h3>Record</h3>
                             <!-- add record here -->
+                            <p>4-2-0</p>
                         </div>
                         <div class="myTeamLastMatchup">
-                            <p>Last Matchup</p>
+                            <h3>Last Matchup</h3>
                             <!-- add last matchup here -->
+                            <p>Team F</p>
                         </div>
                         <div class="myTeamNextMatchup">
-                            <p>Next Matchup</p>
+                            <h3>Next Matchup</h3>
                             <!-- add next matchup here -->
+                            <p>Team J</p>
                         </div>
                         
                     </div>
@@ -63,14 +67,24 @@
                 <div class="dashboardContainer">
                     <h2>Dashboard</h2>
                     <div class="dashboard">
-                        <div class="dash-overview">
+                        <!-- Dash Tab links -->
+                        <div class="dash-tabs">
+                            <button class="dash-tablinks">Overview</button>
+                            <button class="dash-tablinks">Ranks</button>
+                            <button class="dash-tablinks">My Stats</button>
+                        </div>
+                        <!-- Dash Tab content -->
+                        <div id="Overview" class="dashcontent">
                             <h3>Overview</h3>
+                            <p>Overview content (probably table)</p>
                         </div>
-                        <div class="dash-ranks">
+                        <div id="Ranks" class="dashcontent">
                             <h3>Ranks</h3>
+                            <p>Ranks content (probably table)</p>
                         </div>
-                        <div class="dash-myStats">
+                        <div id="myStats" class="dashcontent">
                             <h3>My Stats</h3>
+                            <p>My Stats content (probably table)</p>
                         </div>
                     </div>
                 </div>
