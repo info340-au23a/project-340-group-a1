@@ -135,6 +135,7 @@ h1 {
 
 } */
 
+
 /* Hover rule for navbar */
 nav a:hover {
     color: #fff585;
@@ -142,6 +143,7 @@ nav a:hover {
     border-bottom: solid;
     border-bottom-color: #fff585;
     transition: 0.25s ease-out;
+    
 }
 
 /* table styling */ 
