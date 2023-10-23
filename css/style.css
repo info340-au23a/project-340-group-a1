@@ -61,11 +61,15 @@ h1 {
     padding-right: 2rem;
 }
 
-.myTeam p {
+.myTeamSummary {
+    display: flex;
+}
+
+.myTeamSummary div {
     padding: 1rem;
 }
 
-.dashboard {
+.dashboardContainer {
     background-color: rgb(224, 240, 230);
     font-family: "Hind", sans-serif;
     border: solid;
@@ -76,10 +80,19 @@ h1 {
     margin: 1rem 0px;
 }
 
-.dashboard h2 {
+.dashboardContainer h2 {
     margin-top: 0;
     padding-right: 2rem;
 }
+
+.dashboard {
+    display: flex;
+}
+
+.dashboard div {
+    padding-left: 2rem;
+}
+
 /*  End of Homepage (index.html) styling content */
 
 /* Styling for login page */
