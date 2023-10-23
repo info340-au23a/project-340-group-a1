@@ -61,15 +61,6 @@ h1 {
     padding-right: 2rem;
 }
 
-.myTeam h3 {
-    margin-bottom: .5rem;
-}
-
-.myTeam p {
-    text-align: center;
-    margin-top: .5rem;
-}
-
 .myTeamSummary {
     display: flex;
 }
@@ -102,15 +93,6 @@ h1 {
     padding-left: 2rem;
 }
 
-.dash-tabs button {
-    
-}
-
-.dashcontent {
-    display: none;
-    padding: 6px 12px;
-    border-top: none;
-  }
 /*  End of Homepage (index.html) styling content */
 
 /* Styling for login page */
@@ -159,4 +141,38 @@ nav a:hover {
     border-bottom: solid;
     border-bottom-color: #fff585;
     transition: 0.25s ease-out;
+}
+
+/* table styling */ 
+.Tschedule table {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+.Tschedule thead {
+    background-color: lightblue;
+}
+.Tschedule thead, th {
+    height: 2rem;
+    text-align: center;
+}
+.Tschedule th, td {
+    padding: 0.5em;
+    border-bottom: 1px solid #d3d3d3
+}
+.Tschedule td {
+    text-align: center;
+}
+.Tschedule tr:nth-child(even) {
+    background-color: #eee;
+}
+.Tschedule tbody tr:hover{
+    background-color: lightblue;
 }
