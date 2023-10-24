@@ -5,6 +5,7 @@
 
 html {
     background-color: rgb(206, 228, 206);
+    height: 100%;
 }
 
 /* navbar styling */
@@ -15,7 +16,7 @@ nav {
     top: 0;
     background-color: rgb(46, 118, 53);
     display: flex;
-}   
+}
 
 nav ul {
     display: flex;
@@ -70,6 +71,10 @@ h1 {
     padding: 1rem;
 }
 
+.myTeamSummary p {
+    text-align: center;
+}
+
 .dashboardContainer {
     background-color: rgb(224, 240, 230);
     font-family: "Hind", sans-serif;
@@ -94,6 +99,13 @@ h1 {
     padding-left: 2rem;
 }
 
+.dash-tabs button {
+    background-color: rgb(16, 129, 1);
+    color: #fffcd7;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
 /*  End of Homepage (index.html) styling content */
 
 /* Styling for login page */
@@ -103,10 +115,75 @@ h1 {
 }
 
 .login input {
-    width: 20%;
+    width: 300px;
     margin-bottom: 1rem;
 }
 /* End of styling for login page */
+
+/* schedule table styling */ 
+.Tschedule table {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+.Tschedule thead, th {
+    height: 2rem;
+    text-align: center;
+    background-color: lightblue;
+}
+.Tschedule th, td {
+    padding: 0.5em;
+    border-bottom: 1px solid #d3d3d3
+}
+.Tschedule td {
+    text-align: center;
+}
+.Tschedule tr:nth-child(even) {
+    background-color: #eee;
+}
+.Tschedule tbody tr:hover{
+    background-color: lightblue;
+}
+
+/* matchup table styling */ 
+.Tmatchup table {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+.Tmatchup thead, th {
+    background-color: lightgrey;
+    height: 2rem;
+    text-align: center;
+}
+.Tmatchup th, td {
+    padding: 0.5em;
+    border-bottom: 1px solid #d3d3d3
+}
+.Tmatchup td {
+    text-align: center;
+}
+.Tmatchup tr:nth-child(even) {
+    background-color: #eee;
+}
+.Tmatchup tbody tr:hover{
+    background-color: lightblue;
+}
+
+/* Styling the team logo images */
+table img {
+    max-width: 50px;
+    max-height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    text-align: left;
+}
 
 /* Styling for SMALL screens (598px+) */
 @media(min-width:598px){
@@ -123,6 +200,16 @@ h1 {
     nav li{
         width: 120px;
     } 
+    .homeHeader {
+        background-image: url('../imgs/Football.jpg');
+        background-size: 100%;
+        margin-top: 3rem;
+    }
+    .homeHeader h1 {
+        color: beige;
+        padding-bottom: 3rem;
+        padding-left: 1rem;
+    }
 }
 
 /* Styling for LARGE screens (992px+)
@@ -135,6 +222,11 @@ h1 {
 
 } */
 
+/* Hover rule for homepage dashboard button */
+.dash-tabs button:hover {
+    background-color: #fffcd7;
+    color: rgb(11, 96, 0);
+}
 
 /* Hover rule for navbar */
 nav a:hover {
@@ -143,39 +235,4 @@ nav a:hover {
     border-bottom: solid;
     border-bottom-color: #fff585;
     transition: 0.25s ease-out;
-    
-}
-
-/* table styling */ 
-.Tschedule table {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-}
-table {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-}
-.Tschedule thead {
-    background-color: lightblue;
-}
-.Tschedule thead, th {
-    height: 2rem;
-    text-align: center;
-}
-.Tschedule th, td {
-    padding: 0.5em;
-    border-bottom: 1px solid #d3d3d3
-}
-.Tschedule td {
-    text-align: center;
-}
-.Tschedule tr:nth-child(even) {
-    background-color: #eee;
-}
-.Tschedule tbody tr:hover{
-    background-color: lightblue;
 }
