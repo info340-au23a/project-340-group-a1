@@ -98,6 +98,14 @@ h1 {
 .dashboard div {
     padding-left: 2rem;
 }
+
+.dash-tabs button {
+    background-color: rgb(16, 129, 1);
+    color: #fffcd7;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
 /*  End of Homepage (index.html) styling content */
 
 /* Styling for login page */
@@ -214,6 +222,12 @@ footer {
 
 } */
 
+/* Hover rule for homepage dashboard button */
+.dash-tabs button:hover {
+    background-color: #fffcd7;
+    color: rgb(11, 96, 0);
+}
+
 /* Hover rule for navbar */
 nav a:hover {
     color: #fff585;
@@ -221,5 +235,4 @@ nav a:hover {
     border-bottom: solid;
     border-bottom-color: #fff585;
     transition: 0.25s ease-out;
-    
 }
