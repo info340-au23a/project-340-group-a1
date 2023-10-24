@@ -179,3 +179,12 @@ table {
 .Tschedule tbody tr:hover{
     background-color: lightblue;
 }
+
+/* Styling the team logo images */
+table img {
+    max-width: 50px;
+    max-height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
