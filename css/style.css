@@ -109,33 +109,6 @@ h1 {
 }
 /* End of styling for login page */
 
-/* Styling for SMALL screens (598px+) */
-@media(min-width:598px){
-    nav ul {
-        padding-left: 40px;
-    }
-    nav li{
-        width: 90px;
-    } 
-}
-
-/* Styling for MEDIUM screens (768px+) */
-@media(min-width:768px){
-    nav li{
-        width: 120px;
-    } 
-}
-
-/* Styling for LARGE screens (992px+)
-@media(min-width:992px){
-
-} */
-
-/* Styling for EXTRA-LARGE screens (1200px+)
-@media(min-width:1200px){
-
-} */
-
 /* schedule table styling */ 
 .Tschedule table {
     width: 75%;
@@ -200,6 +173,42 @@ table img {
 footer {
     text-align: left;
 }
+
+/* Styling for SMALL screens (598px+) */
+@media(min-width:598px){
+    nav ul {
+        padding-left: 40px;
+    }
+    nav li{
+        width: 90px;
+    } 
+}
+
+/* Styling for MEDIUM screens (768px+) */
+@media(min-width:768px){
+    nav li{
+        width: 120px;
+    } 
+    .homeHeader {
+        background-image: url('../imgs/Football.jpg');
+        background-size: 100%;
+        margin-top: 3rem;
+    }
+    .homeHeader h1 {
+        color: beige;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Styling for LARGE screens (992px+)
+@media(min-width:992px){
+
+} */
+
+/* Styling for EXTRA-LARGE screens (1200px+)
+@media(min-width:1200px){
+
+} */
 
 /* Hover rule for navbar */
 nav a:hover {
