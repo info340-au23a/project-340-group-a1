@@ -146,25 +146,17 @@ nav a:hover {
     
 }
 
-/* table styling */ 
+/* schedule table styling */ 
 .Tschedule table {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
 }
-table {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-}
-.Tschedule thead {
-    background-color: lightblue;
-}
 .Tschedule thead, th {
     height: 2rem;
     text-align: center;
+    background-color: lightblue;
 }
 .Tschedule th, td {
     padding: 0.5em;
@@ -177,6 +169,32 @@ table {
     background-color: #eee;
 }
 .Tschedule tbody tr:hover{
+    background-color: lightblue;
+}
+
+/* matchup table styling */ 
+.Tmatchup table {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+.Tmatchup thead, th {
+    background-color: lightgrey;
+    height: 2rem;
+    text-align: center;
+}
+.Tmatchup th, td {
+    padding: 0.5em;
+    border-bottom: 1px solid #d3d3d3
+}
+.Tmatchup td {
+    text-align: center;
+}
+.Tmatchup tr:nth-child(even) {
+    background-color: #eee;
+}
+.Tmatchup tbody tr:hover{
     background-color: lightblue;
 }
 
