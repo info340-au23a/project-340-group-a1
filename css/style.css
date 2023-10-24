@@ -5,6 +5,7 @@
 
 html {
     background-color: rgb(206, 228, 206);
+    height: 100%;
 }
 
 /* navbar styling */
@@ -135,17 +136,6 @@ h1 {
 
 } */
 
-
-/* Hover rule for navbar */
-nav a:hover {
-    color: #fff585;
-    border-bottom: 0.8rem;
-    border-bottom: solid;
-    border-bottom-color: #fff585;
-    transition: 0.25s ease-out;
-    
-}
-
 /* schedule table styling */ 
 .Tschedule table {
     width: 75%;
@@ -207,3 +197,16 @@ table img {
     margin-right: auto;
 }
 
+footer {
+    text-align: left;
+}
+
+/* Hover rule for navbar */
+nav a:hover {
+    color: #fff585;
+    border-bottom: 0.8rem;
+    border-bottom: solid;
+    border-bottom-color: #fff585;
+    transition: 0.25s ease-out;
+    
+}
