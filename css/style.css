@@ -5,6 +5,7 @@
 
 html {
     background-color: rgb(206, 228, 206);
+    height: 100%;
 }
 
 /* navbar styling */
@@ -207,3 +208,8 @@ table img {
     margin-right: auto;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
