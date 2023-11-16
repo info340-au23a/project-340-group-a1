@@ -196,7 +196,7 @@ footer {
 }
 
 /* Styling for MEDIUM screens (768px+) */
-/* @media(min-width:768px){
+@media(min-width:768px){
     nav li{
         width: 120px;
     } 
@@ -210,7 +210,7 @@ footer {
         padding-bottom: 3rem;
         padding-left: 1rem;
     }
-} */
+}
 
 /* Styling for LARGE screens (992px+)
 @media(min-width:992px){
