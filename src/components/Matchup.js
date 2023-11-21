@@ -75,12 +75,6 @@ export default function MatchupTable() {
             </table>
             </div>
 
-            <form>
-                <label for="addPlayer">Add Player:</label>
-                <input type="text" id="addPlayer" placeholder="Enter player name" required/>
-                <button type="button">Add Player</button>
-            </form>
-
         </main>
 
         </div>

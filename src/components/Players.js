@@ -1,7 +1,8 @@
 import React from 'react';
 import PlayerCard from './PlayerCard';
 
-export default function PlayersPage() {
+export default function PlayersPage(props) {
+
     return (
         <div className="players-page">
 
@@ -30,6 +31,23 @@ export default function PlayersPage() {
                     </div>
                 </div>
             </main>
+
+
+            <div>
+            <form id="playerForm">
+                <label for="addPlayer">Player Name:</label>
+                <input type="text" id="addPlayer" placeholder="Enter player name" required/>
+                <label for="yards">Yards:</label>
+                <input type="number" id="yards" placeholder="Enter yards" />
+                <label for="touchdowns">Touchdowns:</label>
+                <input type="number" id="touchdowns" placeholder="Enter touchdowns" />
+                <label for="position">Position:</label>
+                <input type="text" id="position" placeholder="Enter position" />
+                <label for="team">Team:</label>
+                <input type="text" id="team" placeholder="Enter team name" />
+                <button type="button" onclick="addPlayer()">Add Player</button>
+            </form>
+            </div>
 
             <footer className="players-footer">
                 <p>&copy; 2023 Fantasy Football Standings. All rights reserved. | <a href="mailto:contact@fantasyfootball.com">contact@fantasyfootball.com</a></p>
