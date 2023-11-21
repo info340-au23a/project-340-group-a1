@@ -11,6 +11,19 @@ import { Routes, Route } from 'react-router-dom';
 function App(props) {
   const [playerData, setPlayerData] = useState(fakePlayerData);
 
+  const addPlayer = (name, yards, touchdowns, position, team) => {
+    const newPlayer = {
+      "playerName": name,
+      "position": position,
+      "team": team,
+      "yards": yards,
+      "touchdowns": touchdowns,
+      "score": 21.0,
+    }
+    const newPlayerData = [...playerData, newPlayer];
+    setPlayerData(newPlayerData);
+  }
+
   return (
     <div>
       <NavBar />
@@ -19,7 +32,7 @@ function App(props) {
           <Route path="/league" element={<LeaguePage />} />
           <Route path="/schedule" element={<ScheduleTable />} />
           <Route path="/matchup" element={<MatchupTable />} />
-          <Route path="/players" element={<PlayersPage />} />
+          <Route path="/players" element={<PlayersPage playerData={playerData} addPlayerFunction={addPlayer}/>} />
       </Routes>
     </div>
   )

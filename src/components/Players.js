@@ -2,6 +2,34 @@ import React from 'react';
 import PlayerCard from './PlayerCard';
 
 export default function PlayersPage(props) {
+    const addPlayer = props.addPlayerFunction;
+    const playerData = props.playerData;
+
+    const playerList = playerData.map((player) => {
+        const name = player.playerName;
+        const position = player.position;
+        const team = player.team;
+        const imgUrl = player.imgUrl;
+        return(
+            <PlayerCard 
+                imageUrl={imgUrl}
+                playerName={name}
+                position={position}
+                team={team} 
+                additionalInfo="Additional info or stats"
+                key={name}
+            />
+        )
+    });
+
+    const handleSubmit = (event) => {
+        const newPlayerName = document.getElementById('addPlayer').value;
+        const newPlayerYards = document.getElementById('yards').value;
+        const newPlayerTouchdowns = document.getElementById('touchdowns').value;
+        const newPlayerPosition = document.getElementById('position').value;
+        const newPlayerTeam = document.getElementById('team').value;
+        addPlayer(newPlayerName, newPlayerYards, newPlayerTouchdowns, newPlayerPosition, newPlayerTeam);
+    }
 
     return (
         <div className="players-page">
@@ -14,20 +42,7 @@ export default function PlayersPage(props) {
             <main className="players-main">
                 <div className="players-container">
                     <div className="players-row">
-                        <PlayerCard 
-                            imageUrl="https://library.sportingnews.com/styles/twitter_card_120x120/s3/2021-10/patrick-mahomes-020221-getty-ftrjpg_1cd4z4o4rotcf1hqbou86f7lru.jpg?itok=uDvRkiGV" 
-                            name="Patrick Mahomes" 
-                            position="QB" 
-                            team="Kansas City Chiefs" 
-                            additionalInfo="Additional info or stats"
-                        />
-                        <PlayerCard 
-                            imageUrl="https://cdn.vox-cdn.com/thumbor/LSFpoGLta6--lVonJLt1tV5G384=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/24018462/usa_today_19037371.jpg" 
-                            name="Geno Smith" 
-                            position="QB" 
-                            team="Seattle Seahawks" 
-                            additionalInfo="Additional info or stats"
-                        />
+                        {playerList}
                     </div>
                 </div>
             </main>
@@ -35,17 +50,17 @@ export default function PlayersPage(props) {
 
             <div>
             <form id="playerForm">
-                <label for="addPlayer">Player Name:</label>
+                <label htmlFor="addPlayer">Player Name:</label>
                 <input type="text" id="addPlayer" placeholder="Enter player name" required/>
-                <label for="yards">Yards:</label>
+                <label htmlFor="yards">Yards:</label>
                 <input type="number" id="yards" placeholder="Enter yards" />
-                <label for="touchdowns">Touchdowns:</label>
+                <label htmlFor="touchdowns">Touchdowns:</label>
                 <input type="number" id="touchdowns" placeholder="Enter touchdowns" />
-                <label for="position">Position:</label>
+                <label htmlFor="position">Position:</label>
                 <input type="text" id="position" placeholder="Enter position" />
-                <label for="team">Team:</label>
+                <label htmlFor="team">Team:</label>
                 <input type="text" id="team" placeholder="Enter team name" />
-                <button type="button" onclick="addPlayer()">Add Player</button>
+                <button type="button" onClick={handleSubmit}>Add Player</button>
             </form>
             </div>
 
