@@ -201,7 +201,7 @@ footer {
         width: 120px;
     } 
     .homeHeader {
-        /* background-image: url('./imgs/Football.jpg'); */
+        background-image: url('../public/imgs/Football.jpg');
         background-size: 100%;
         margin-top: 3rem;
     }

@@ -4,8 +4,10 @@ import { NavBar } from "./Navigation.js";
 export default function HomePage(props) {
     return(
         <div className="HomePage">
-        <NavBar />
-        <h1>Fantasy Football</h1>
+            <NavBar />
+            <header className="homeHeader">
+                <h1>Fantasy Football</h1>
+            </header>
             <div className="homePageContent">
                 <div className="myTeam">
                     <h2>My Team</h2>
