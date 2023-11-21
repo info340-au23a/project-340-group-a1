@@ -63,10 +63,6 @@ export default function PlayersPage(props) {
                 <button type="button" onClick={handleSubmit}>Add Player</button>
             </form>
             </div>
-
-            <footer className="players-footer">
-                <p>&copy; 2023 Fantasy Football Standings. All rights reserved. | <a href="mailto:contact@fantasyfootball.com">contact@fantasyfootball.com</a></p>
-            </footer>
         </div>
     );
 }

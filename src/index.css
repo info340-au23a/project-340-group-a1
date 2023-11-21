@@ -184,69 +184,13 @@ table img {
     margin-right: auto;
 }
 
-footer {
-    text-align: left;
-}
-
-/* Styling for SMALL screens (598px+) */
-@media(min-width:598px){
-    nav ul {
-        padding-left: 40px;
-    }
-    nav li{
-        width: 90px;
-    } 
-}
-
-/* Styling for MEDIUM screens (768px+) */
-@media(min-width:768px){
-    nav li{
-        width: 120px;
-    } 
-    .homeHeader {
-        background-image: url('../public/imgs/Football.jpg');
-        background-size: 100%;
-        margin-top: 3rem;
-    }
-    .homeHeader h1 {
-        color: beige;
-        padding-bottom: 3rem;
-        padding-left: 1rem;
-    }
-}
-
-/* Styling for LARGE screens (992px+)
-@media(min-width:992px){
-
-} */
-
-/* Styling for EXTRA-LARGE screens (1200px+)
-@media(min-width:1200px){
-
-} */
-
-/* Hover rule for homepage dashboard button */
-.dash-tabs button:hover {
-    background-color: #fffcd7;
-    color: rgb(11, 96, 0);
-}
-
-/* Hover rule for navbar */
-nav a:hover {
-    color: #fff585;
-    border-bottom: 0.8rem;
-    border-bottom: solid;
-    border-bottom-color: #fff585;
-    transition: 0.25s ease-out;
-}
-
 /* Styles for the player card */
 .player-card {
     border: 1px solid #ddd; /* Light grey border */
     border-radius: 10px; /* Rounded corners */
     overflow: hidden; /* Ensures the content fits within the borders */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
-    margin: 15px;
+    margin: 10px auto;
     background-color: #f8f8f8; /* Light background */
     transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
 }
@@ -284,9 +228,62 @@ nav a:hover {
     margin-bottom: 5px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .player-card {
-        margin: 10px auto; /* Center the cards on smaller screens */
+
+footer {
+    text-align: left;
+}
+
+/* Styling for SMALL screens (598px+) */
+@media(min-width:598px){
+    nav ul {
+        padding-left: 40px;
     }
+    nav li{
+        width: 90px;
+    } 
+}
+
+/* Styling for MEDIUM screens (768px+) */
+@media(min-width:768px){
+    nav li{
+        width: 120px;
+    } 
+    .homeHeader {
+        background-image: url('../public/imgs/Football.jpg');
+        background-size: 100%;
+        margin-top: 3rem;
+    }
+    .homeHeader h1 {
+        color: beige;
+        padding-bottom: 3rem;
+        padding-left: 1rem;
+    }
+    .player-card {
+        margin: 15px;
+    }
+}
+
+/* Styling for LARGE screens (992px+)
+@media(min-width:992px){
+
+} */
+
+/* Styling for EXTRA-LARGE screens (1200px+)
+@media(min-width:1200px){
+
+} */
+
+/* Hover rule for homepage dashboard button */
+.dash-tabs button:hover {
+    background-color: #fffcd7;
+    color: rgb(11, 96, 0);
+}
+
+/* Hover rule for navbar */
+nav a:hover {
+    color: #fff585;
+    border-bottom: 0.8rem;
+    border-bottom: solid;
+    border-bottom-color: #fff585;
+    transition: 0.25s ease-out;
 }

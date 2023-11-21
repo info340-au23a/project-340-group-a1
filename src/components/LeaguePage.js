@@ -4,7 +4,6 @@ export default function LeaguePage (props) {
     
         return (
             <div>
-
                 <header>
                     <h1>League Standings</h1>
                 </header>
@@ -108,7 +107,6 @@ export default function LeaguePage (props) {
                 </footer>
             </div>
         );
-    
 }
 
 

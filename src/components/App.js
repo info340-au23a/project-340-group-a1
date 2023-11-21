@@ -1,10 +1,11 @@
 import React, { useState } from 'react'; //import React Component
 import HomePage from "./HomePage.js"
-import ScheduleTable from './Schedule.js';
-import MatchupTable from './Matchup.js';
 import LeaguePage from './LeaguePage';
-import PlayersPage from './Players.js';
+import ScheduleTable from './SchedulePage.js';
+import MatchupTable from './MatchupPage.js';
+import PlayersPage from './PlayersPage.js';
 import { NavBar } from './Navigation.js';
+
 import fakePlayerData from "../data/fake-player-data.json";
 import { Routes, Route } from 'react-router-dom';
 
