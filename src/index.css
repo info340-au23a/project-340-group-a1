@@ -251,9 +251,6 @@ nav a:hover {
     transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
 }
 
-.player-card:hover {
-    transform: scale(1.05); /* Slightly enlarges the card on hover */
-}
 
 .player-image-container {
     width: 100%;
