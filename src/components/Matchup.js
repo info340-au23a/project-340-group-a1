@@ -12,12 +12,15 @@ export default function MatchupTable() {
 
             <div className="Tmatchup">
             <table>
-                <tr>
+                <thead>
+                 <tr>
                     <th>Your Team</th>
                     <th>Score: Total</th>
                     <th>Opponent</th>
                     <th>Score: Total</th>
-                </tr>
+                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>Player 1</td>
                     <td>10</td>
@@ -72,6 +75,7 @@ export default function MatchupTable() {
                     <td>Player 1</td>
                     <td>28</td>
                 </tr>
+                </tbody>
             </table>
             </div>
 
