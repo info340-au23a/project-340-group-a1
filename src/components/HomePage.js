@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavBar } from "./Navigation.js";
 
 export default function HomePage(props) {
@@ -30,33 +30,44 @@ export default function HomePage(props) {
                     </div>
                 </div>
 
-                <div className="dashboardContainer">
-                    <h2>Dashboard</h2>
-                    <div class="dashboard">
-                        {/* Dash Tab links */}
-                        <div class="dash-tabs">
-                            <button class="dash-tablinks">Overview</button>
-                            <button class="dash-tablinks">Ranks</button>
-                            <button class="dash-tablinks">My Stats</button>
-                        </div>
-                        {/* <Dash Tab content */}
-                        <div id="Overview" class="dashcontent">
-                            <h3>Overview</h3>
-                            <p>Overview content (probably table)</p>
-                        </div>
-                        <div id="Ranks" class="dashcontent">
-                            <h3>Ranks</h3>
-                            <p>Ranks content (probably table)</p>
-                        </div>
-                        <div id="myStats" class="dashcontent">
-                            <h3>My Stats</h3>
-                            <p>My Stats content (probably table)</p>
-                        </div>
-                    </div>
-                </div>
+                <HomeDashboard />
                 
             </div>
 
+        </div>
+    )
+}
+
+function HomeDashboard(props) {
+    const [currentTab, setCurrentTab] = useState("Overview");
+
+    const handleClick = (event) => {
+        setCurrentTab(event.target.name);
+    }
+
+    return(
+        <div className="dashboardContainer">
+            <h2>Dashboard</h2>
+            <div className="dashboard">
+                {/* Dash Tab links */}
+                <div className="dash-tabs">
+                    <button className="dash-tablinks" name="Overview" onClick={handleClick}>Overview</button>
+                    <button className="dash-tablinks" name="Ranks" onClick={handleClick}>Ranks</button>
+                    <button className="dash-tablinks" name="My Stats" onClick={handleClick}>My Stats</button>
+                </div>
+                {/* <Dash Tab content */}
+                <HomeDashContent dashTab={currentTab} />
+            </div>
+        </div>
+    )
+}
+
+function HomeDashContent(props) {
+    const {dashTab} = props;
+    return(
+        <div id={dashTab} className="dashcontent">
+            <h3>{dashTab}</h3>
+            <p>{dashTab} content (probably table)</p>
         </div>
     )
 }

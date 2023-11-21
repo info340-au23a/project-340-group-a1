@@ -91,18 +91,21 @@ h1 {
     padding-right: 2rem;
 }
 
-.dashboard {
-    display: flex;
-}
+
 
 .dashboard div {
     padding-left: 2rem;
+}
+
+.dash-tabs {
+    display: flex;
 }
 
 .dash-tabs button {
     background-color: rgb(16, 129, 1);
     color: #fffcd7;
     padding: .5rem 1rem;
+    margin: 0rem .5rem;
     border-radius: 5px;
     transition-duration: 0.4s;
 }
