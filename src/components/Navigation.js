@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 // Navigation Bar
 export function NavBar(props) {
@@ -6,23 +7,23 @@ export function NavBar(props) {
         <div className="navigationBar">
             <nav>
                 {/* Page Logo */}
-                <a href="index.html"><img src="imgs/FantasyFootballLogo.png" alt="Home" /></a>
+                <Link to="/"><img src="imgs/FantasyFootballLogo.png" alt="Home" /></Link>
                 {/* tab to different pages */}
                 <ul>
                     <li>
-                        <a href="league.html">League</a>
+                        <Link to="/league">League</Link>
                     </li>
                     <li>
-                        <a href="schedule.html">Schedule</a>
+                        <Link to="/schedule">Schedule</Link>
                     </li>
                     <li>
-                        <a href="matchup.html">Matchup</a>
+                        <Link to="/matchup">Matchup</Link>
                     </li>
                     <li>
-                        <a href="players.html">Players</a>
+                        <Link to="/players">Players</Link>
                     </li>
                     <li>
-                        <a href="login.html">Login</a>
+                        Login
                     </li>
                 </ul>
             </nav>
