@@ -7,10 +7,11 @@ import PlayersPage from './Players.js';
 function App(props) {
   return (
     <div>
-      <HomePage />
+      < HomePage />
       {/* <ScheduleTable /> */}
       {/* <MatchupTable /> */}
       {/* <PlayersPage /> */}
+      
     </div>
   )
 }
