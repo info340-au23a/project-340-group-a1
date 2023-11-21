@@ -1,11 +1,9 @@
 import React from 'react';
-import { NavBar } from './Navigation.js';
 import PlayerCard from './PlayerCard';
 
 export default function PlayersPage() {
     return (
         <div>
-            <NavBar />
 
             <header>
                 <h1>Players</h1>

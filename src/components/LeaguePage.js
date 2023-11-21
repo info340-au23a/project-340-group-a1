@@ -4,26 +4,6 @@ export default function LeaguePage (props) {
     
         return (
             <div>
-                <nav>
-                    <a href="index.html"><img src="imgs/FantasyFootballLogo.png" alt="Home" /></a>
-                    <ul>
-                        <li>
-                            <a href="league.html">League</a>
-                        </li>
-                        <li>
-                            <a href="schedule.html">Schedule</a>
-                        </li>
-                        <li>
-                            <a href="matchup.html">Matchup</a>
-                        </li>
-                        <li>
-                            <a href="players.html">Players</a>
-                        </li>
-                        <li>
-                            <a href="login.html">Login</a>
-                        </li>
-                    </ul>
-                </nav>
 
                 <header>
                     <h1>League Standings</h1>

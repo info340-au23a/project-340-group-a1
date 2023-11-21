@@ -1,11 +1,8 @@
 import React from "react";
-import { NavBar } from "./Navigation.js";
 
 export default function MatchupTable() {
     return (
         <div>
-            <NavBar />
-
             <header>
             <h1>Match Up</h1>
         </header>

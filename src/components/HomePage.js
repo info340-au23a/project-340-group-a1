@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { NavBar } from "./Navigation.js";
 
 export default function HomePage(props) {
     return(
         <div className="HomePage">
-            <NavBar />
             <header className="homeHeader">
                 <h1>Fantasy Football</h1>
             </header>

@@ -1,10 +1,8 @@
 import React from "react";
-import { NavBar } from "./Navigation.js";
 
 export default function ScheduleTable() {
     return (
         <div>
-            <NavBar />
 
         <header>
             <h1>Fantasy Football Schedule</h1>
