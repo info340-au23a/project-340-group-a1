@@ -104,6 +104,7 @@ h1 {
 
 .dashboard div {
     padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .dashboard .dashcontent {
@@ -306,6 +307,7 @@ footer {
         margin-left: 2rem;
     }
     footer {
+        margin-top: 1rem;
         font-size: 0.8rem;
     }
 }
