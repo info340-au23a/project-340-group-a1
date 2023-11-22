@@ -50,17 +50,28 @@ export default function PlayersPage(props) {
 
             <div>
             <form id="playerForm">
-                <label htmlFor="addPlayer">Player Name:</label>
-                <input type="text" id="addPlayer" placeholder="Enter player name" required/>
-                <label htmlFor="yards">Yards:</label>
-                <input type="number" id="yards" placeholder="Enter yards" />
-                <label htmlFor="touchdowns">Touchdowns:</label>
-                <input type="number" id="touchdowns" placeholder="Enter touchdowns" />
-                <label htmlFor="position">Position:</label>
-                <input type="text" id="position" placeholder="Enter position" />
-                <label htmlFor="team">Team:</label>
-                <input type="text" id="team" placeholder="Enter team name" />
+                <div>
+                    <label htmlFor="addPlayer">Player Name:</label>
+                    <input type="text" id="addPlayer" placeholder="Enter player name" required/>
+                </div>
+                <div>
+                    <label htmlFor="yards">Yards:</label>
+                    <input type="number" id="yards" placeholder="Enter yards" />
+                </div>
+                <div>
+                    <label htmlFor="touchdowns">Touchdowns:</label>
+                    <input type="number" id="touchdowns" placeholder="Enter touchdowns" />
+                </div>
+                <div>
+                    <label htmlFor="position">Position:</label>
+                    <input type="text" id="position" placeholder="Enter position" />
+                </div>
+                <div>
+                    <label htmlFor="team">Team:</label>
+                    <input type="text" id="team" placeholder="Enter team name" />
+                </div>
                 <button type="button" onClick={handleSubmit}>Add Player</button>
+                
             </form>
             </div>
         </div>

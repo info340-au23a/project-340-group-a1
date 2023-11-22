@@ -19,12 +19,12 @@ export function NavBar(props) {
                     <li>
                         <Link to="/matchup">Matchup</Link>
                     </li>
-                    {/* <li>
-                        <Link to="/players">Players</Link>
-                    </li> */}
                     <li>
-                        Login
+                        <Link to="/players">Players</Link>
                     </li>
+                    {/* <li>
+                        Login
+                    </li> */}
                 </ul>
             </nav>
         </div>
