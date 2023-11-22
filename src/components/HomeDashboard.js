@@ -49,6 +49,7 @@ function OverviewTab(props) {
         <div>
             <h3>Overview</h3>
             <p>Overview specific content (probably a table of upcoming matches and other general important info)</p>
+            <p><strong>ALSO FOR THE NAVBAR</strong> -- <em>right now there is no navbar support between tabs for screens smaller than 598px</em></p>
         </div>
     )
 }
