@@ -7,7 +7,7 @@ export function NavBar(props) {
         <div className="navigationBar">
             <nav>
                 {/* Page Logo */}
-                <Link to="/"><img src="imgs/FantasyFootballLogo.png" alt="Home" /></Link>
+                <Link to="/home"><img src="imgs/FantasyFootballLogo.png" alt="Home" /></Link>
                 {/* tab to different pages */}
                 <ul>
                     <li>

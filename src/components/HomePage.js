@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import HomeDashboard from "./HomeDashboard.js";
 
 export default function HomePage(props) {
     return(
@@ -32,40 +33,6 @@ export default function HomePage(props) {
                 
             </div>
 
-        </div>
-    )
-}
-
-function HomeDashboard(props) {
-    const [currentTab, setCurrentTab] = useState("Overview");
-
-    const handleClick = (event) => {
-        setCurrentTab(event.target.name);
-    }
-
-    return(
-        <div className="dashboardContainer">
-            <h2>Dashboard</h2>
-            <div className="dashboard">
-                {/* Dash Tab links */}
-                <div className="dash-tabs">
-                    <button className="dash-tablinks" name="Overview" onClick={handleClick}>Overview</button>
-                    <button className="dash-tablinks" name="Ranks" onClick={handleClick}>Ranks</button>
-                    <button className="dash-tablinks" name="My Stats" onClick={handleClick}>My Stats</button>
-                </div>
-                {/* <Dash Tab content */}
-                <HomeDashContent dashTab={currentTab} />
-            </div>
-        </div>
-    )
-}
-
-function HomeDashContent(props) {
-    const {dashTab} = props;
-    return(
-        <div id={dashTab} className="dashcontent">
-            <h3>{dashTab}</h3>
-            <p>{dashTab} content (probably table)</p>
         </div>
     )
 }

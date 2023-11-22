@@ -30,7 +30,7 @@ function App(props) {
     <div>
       <NavBar />
       <Routes>
-          <Route index element={<HomePage />} />
+          <Route path="/home/:dashtab?/*" element={<HomePage />} />
           <Route path="/league" element={<LeaguePage />} />
           <Route path="/schedule" element={<ScheduleTable />} />
           <Route path="/matchup" element={<MatchupTable />} />

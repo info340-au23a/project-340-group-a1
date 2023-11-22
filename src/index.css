@@ -55,15 +55,18 @@ h1 {
     border-color: rgb(105, 179, 126);
     border-width: 1px;
     border-radius: 10px;
-    padding: 1rem;
+    padding: 0rem;
     margin: 1rem;
+    font-size: 0.8rem;
 }
 
 .myTeam h2 {
+    padding-left: 1rem;
     padding-right: 2rem;
 }
 
-.myTeamSummary {
+.myTeam .myTeamSummary {
+    padding: 0;
     display: flex;
 }
 
@@ -92,13 +95,24 @@ h1 {
 }
 
 
-
 .dashboard div {
     padding-left: 2rem;
 }
 
-.dash-tabs {
+.dashboard .dashcontent {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    background-color: rgb(246, 244, 237);
+    border-color: rgb(105, 179, 126);
+}
+
+.dashboard .dash-tabs {
     display: flex;
+    justify-content: space-evenly;
+    padding: 0;
 }
 
 .dash-tabs button {
@@ -251,6 +265,7 @@ table img {
 }
 
 footer {
+    font-size: 0.7rem;
     text-align: left;
 }
 
@@ -262,8 +277,18 @@ footer {
     nav li{
         width: 90px;
     }
+    .myTeam {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    .myTeam .myTeamSummary {
+        padding: 1;
+    }
     #playerForm div {
         margin-left: 2rem;
+    }
+    footer {
+        font-size: 0.8rem;
     }
 }
 
@@ -282,6 +307,10 @@ footer {
         padding-bottom: 3rem;
         padding-left: 1rem;
     }
+    .dashboard .dash-tabs {
+        justify-content: left;
+        padding-left: 2rem;
+    }
     .player-card {
         margin: 15px;
     }
@@ -296,12 +325,17 @@ footer {
     #playerForm button {
         margin: 1rem 0;
     }
+    footer {
+        font-size: 0.9rem;
+    }
 }
 
-/* Styling for LARGE screens (992px+)
+/* Styling for LARGE screens (992px+) */
 @media(min-width:992px){
-
-} */
+    footer {
+        font-size: 1rem;
+    }
+}
 
 /* Styling for EXTRA-LARGE screens (1200px+)
 @media(min-width:1200px){
