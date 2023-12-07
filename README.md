@@ -8,17 +8,18 @@ The repository for this app is designed to replicate a fantasy football experien
 
 The Main Features of our app consist of:
 
-Player Analytics 
+# Player Analytics 
     In-depth player stats including past performance, injury updates, and projected points.
     Visualization of all player stats
 
-Live Score Updates
+# Live Score Updates
     Get real-time scores for all ongoing NFL games.
     View player performance stats as they happen.
 
-Dashboard
+# Dashboard
     Custom dashboard to track your league standings, team performance
 
-Mobile and Desktop Compatibility
+# Mobile and Desktop Compatibility
     Seamless experience across all devices.
     Sync your data in real-time between your phone, tablet, and computer.
+
