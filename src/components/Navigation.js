@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 // Navigation Bar
 export function NavBar(props) {
-    /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-    return(
+    const [showMenu, setShowMenu] = useState(false);
+
+    const toggleMenu = () => {
+        setShowMenu(!showMenu);
+    };
+
+    return (
         <div className="navigationBar">
             <nav>
                 {/* Page Logo */}
                 <Link to="/home"><img src="imgs/FantasyFootballLogo.png" alt="Home" /></Link>
-                {/* Hamburger Logo -- links to homepage for right now */}
-                <a href="/home" className="icon" onClick="myFunction()">
+                
+                {/* Hamburger Logo */}
+                <a href="#!" className="icon" onClick={toggleMenu}>
                     <i className="fa fa-bars"></i>
                 </a>
-                {/* tab to different pages */}
-                <ul>
+
+                {/* Navigation links */}
+                <ul className={showMenu ? "nav-menu active" : "nav-menu"}>
                     <li>
                         <Link to="/league">League</Link>
                     </li>
@@ -27,11 +34,12 @@ export function NavBar(props) {
                     <li>
                         <Link to="/players">Players</Link>
                     </li>
+                    {/* Uncomment or add additional menu items as needed */}
                     {/* <li>
-                        Login
+                        <Link to="/login">Login</Link>
                     </li> */}
                 </ul>
             </nav>
         </div>
-    )
+    );
 }

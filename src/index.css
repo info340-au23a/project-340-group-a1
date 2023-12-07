@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-
 html {
     background-color: rgb(206, 228, 206);
     height: 100%;
@@ -20,17 +19,25 @@ nav {
 }
 
 nav .icon {
+    display: block;
     font-size: 3rem;
     padding: 0.25rem 0.5rem;
+    cursor: pointer;
 }
 
-nav ul {
+nav ul.nav-menu {
     display: none;
     flex-direction: column;
     padding-left: 0;
+    width: 100%;
+    background-color: rgb(46, 118, 53);
 }
 
-nav li{
+nav ul.nav-menu.active {
+    display: flex;
+}
+
+nav li {
     display: inline-block;
     width: 85px;
     text-align: center;
@@ -47,325 +54,36 @@ nav a {
 }
 /* end of navbar styling */
 
-h1 {
-    padding-top: 3.5rem;
-    font-family: "Outfit", sans-serif;
-}
-
-/* Styling for Homepage (index.html) content */
-.myTeam {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgb(224, 240, 230);
-    font-family: "Hind", sans-serif;
-    border: solid;
-    border-color: rgb(105, 179, 126);
-    border-width: 1px;
-    border-radius: 10px;
-    padding: 0rem;
-    margin: 1rem;
-    font-size: 0.8rem;
-}
-
-.myTeam h2 {
-    padding-left: 1rem;
-    padding-right: 2rem;
-}
-
-.myTeam .myTeamSummary {
-    padding: 0;
-    display: flex;
-}
-
-.myTeamSummary div {
-    padding: 1rem;
-}
-
-.myTeamSummary p {
-    text-align: center;
-}
-
-.dashboardContainer {
-    background-color: rgb(224, 240, 230);
-    font-family: "Hind", sans-serif;
-    border: solid;
-    border-color: rgb(105, 179, 126);
-    border-width: 1px;
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 1rem 0px;
-}
-
-.dashboardContainer h2 {
-    margin-top: 0;
-    padding-right: 2rem;
-}
-
-
-.dashboard div {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.dashboard .dashcontent {
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    border: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    background-color: rgb(246, 244, 237);
-    border-color: rgb(105, 179, 126);
-}
-
-.dashboard .dash-tabs {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0;
-}
-
-.dash-tabs button {
-    background-color: rgb(16, 129, 1);
-    color: #fffcd7;
-    padding: .5rem 1rem;
-    margin: 0rem .5rem;
-    border-radius: 5px;
-    transition-duration: 0.4s;
-}
-/*  End of Homepage (index.html) styling content */
-
-/* Styling for login page */
-.login {
-    display: flex;
-    flex-direction: column;
-}
-
-.login input {
-    width: 300px;
-    margin-bottom: 1rem;
-}
-/* End of styling for login page */
-
-/* schedule table styling */ 
-.Tschedule table {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-}
-.Tschedule thead, th {
-    height: 2rem;
-    text-align: center;
-    background-color: lightblue;
-}
-.Tschedule th, td {
-    padding: 0.5em;
-    border-bottom: 1px solid #d3d3d3
-}
-.Tschedule td {
-    text-align: center;
-}
-.Tschedule tr:nth-child(even) {
-    background-color: #eee;
-}
-.Tschedule tbody tr:hover{
-    background-color: lightblue;
-}
-
-/* matchup table styling */ 
-.Tmatchup table {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-}
-.Tmatchup thead, th {
-    background-color: lightgrey;
-    height: 2rem;
-    text-align: center;
-}
-.Tmatchup th, td {
-    padding: 0.5em;
-    border-bottom: 1px solid #d3d3d3
-}
-.Tmatchup td {
-    text-align: center;
-}
-.Tmatchup tr:nth-child(even) {
-    background-color: #eee;
-}
-.Tmatchup tbody tr:hover{
-    background-color: lightblue;
-}
-
-/* Styling the team logo images */
-table img {
-    max-width: 50px;
-    max-height: 50px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Styles for the player card */
-.player-card {
-    border: 1px solid #ddd; /* Light grey border */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Ensures the content fits within the borders */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
-    margin: 10px auto;
-    background-color: #f8f8f8; /* Light background */
-    transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
-}
-
-
-.player-image-container {
-    width: 100%;
-    height: 200px; /* Adjust height as needed */
-    background-color: #eee; /* Background for the image container */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.player-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover; /* Ensures the image covers the container */
-}
-
-.player-info {
-    padding: 10px;
-}
-
-.player-name {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #333; /* Dark text for contrast */
-    margin-bottom: 5px;
-}
-
-.player-details, .player-additional {
-    font-size: 0.9em;
-    color: #666; /* Slightly lighter text for less important details */
-    margin-bottom: 5px;
-}
-
-#playerForm {
-    display: flex;
-    flex-direction: column;
-}
-
-#playerForm div {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-bottom: 1rem;
-    
-}
-
-#playerForm button {
-    background-color: rgb(16, 129, 1);
-    color: #fffcd7;
-    padding: .5rem 1rem;
-    margin: 0rem .5rem;
-    border-radius: 5px;
-    transition-duration: 0.4s;
-}
-
-footer {
-    font-size: 0.7rem;
-    text-align: left;
-}
+/* Additional styles... */
 
 /* Styling for SMALL screens (598px+) */
-@media(min-width:598px){
+@media(min-width:598px) {
     nav {
         justify-content: left;
     }
     nav .icon {
         display: none;
     }
-    nav ul {
+    nav ul.nav-menu {
         display: flex;
         flex-direction: row;
         padding-left: 40px;
     }
-    nav li{
+    nav li {
         width: 90px;
-    }
-    h1 {
-        padding-top: 3rem;
-    }
-    .myTeam {
-        padding: 1rem;
-        font-size: 1rem;
-    }
-    .myTeam .myTeamSummary {
-        padding: 1;
-    }
-    #playerForm div {
-        margin-left: 2rem;
-    }
-    footer {
-        margin-top: 1rem;
-        font-size: 0.8rem;
     }
 }
 
 /* Styling for MEDIUM screens (768px+) */
-@media(min-width:768px){
-    nav li{
+@media(min-width:768px) {
+    nav li {
         width: 120px;
     } 
-    .homeHeader {
-        background-image: url('../public/imgs/Football.jpg');
-        background-size: 100%;
-        margin-top: 3rem;
-    }
-    .homeHeader h1 {
-        color: beige;
-        padding-bottom: 3rem;
-        padding-left: 1rem;
-    }
-    .dashboard .dash-tabs {
-        justify-content: left;
-        padding-left: 2rem;
-    }
-    .player-card {
-        margin: 15px;
-    }
-    #playerForm {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    #playerForm div {
-        margin: 1rem;
-
-    }
-    #playerForm button {
-        margin: 1rem 0;
-    }
-    footer {
-        font-size: 0.9rem;
-    }
 }
 
 /* Styling for LARGE screens (992px+) */
-@media(min-width:992px){
-    footer {
-        font-size: 1rem;
-    }
-}
-
-/* Styling for EXTRA-LARGE screens (1200px+)
-@media(min-width:1200px){
-
-} */
-
-/* Hover rule for homepage dashboard button */
-.dash-tabs button:hover {
-    background-color: #fffcd7;
-    color: rgb(11, 96, 0);
+@media(min-width:992px) {
+    /* Styles for large screens */
 }
 
 /* Hover rule for navbar */
@@ -376,3 +94,7 @@ nav a:hover {
     border-bottom-color: #fff585;
     transition: 0.25s ease-out;
 }
+
+/* Additional styles for other elements... */
+
+/* Adjust as needed for your specific design */
