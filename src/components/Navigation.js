@@ -10,8 +10,8 @@ export function NavBar(props) {
                 {/* Page Logo */}
                 <Link to="/home"><img src="imgs/FantasyFootballLogo.png" alt="Home" /></Link>
                 {/* Hamburger Logo -- links to homepage for right now */}
-                <a href="/home" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
+                <a href="/home" className="icon" onClick="myFunction()">
+                    <i className="fa fa-bars"></i>
                 </a>
                 {/* tab to different pages */}
                 <ul>
