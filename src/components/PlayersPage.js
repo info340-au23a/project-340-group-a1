@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PlayerCard from './PlayerCard';
 
 export default function PlayersPage(props) {
     const addPlayer = props.addPlayerFunction;
     const playerData = props.playerData;
+
+    const [selectedPlayer, setSelectedPlayer] = useState('');
 
     const playerList = playerData.map((player) => {
         const name = player.playerName;
@@ -22,6 +24,9 @@ export default function PlayersPage(props) {
         )
     });
 
+    const handleDropdownChange = (event) =>{
+        setSelectedPlayer(event.target.value);
+    }
     const handleSubmit = (event) => {
         const newPlayerName = document.getElementById('addPlayer').value;
         const newPlayerYards = document.getElementById('yards').value;
@@ -37,6 +42,17 @@ export default function PlayersPage(props) {
             <header className="players-header">
                 <h1>Players</h1>
             </header>
+
+            {/* Dropdown for selecting a player */}
+            <div className="player-select-dropdown">
+                <label htmlFor="playerSelect">Choose a Player:</label>
+                <select id="playerSelect" value={selectedPlayer} onChange={handleDropdownChange}>
+                    <option value="">Select a player</option>
+                    {playerData.map(player => (
+                        <option key={player.playerName} value={player.playerName}>{player.playerName}</option>
+                    ))}
+                </select>
+            </div>
 
             {/* Main content */}
             <main className="players-main">
