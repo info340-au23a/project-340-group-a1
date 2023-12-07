@@ -51,7 +51,7 @@ export default function PlayersPage(props) {
 
             {/* Dropdown for selecting a player */}
             <div className="player-select-dropdown">
-                <label htmlFor="playerSelect">Choose a Player:</label>
+                <label htmlFor="playerSelect " className="dropdown-label">Choose a Player: </label>
                 <select id="playerSelect" value={selectedPlayer} onChange={handleDropdownChange}>
                     <option value="">Select a player</option>
                     {playerData.map(player => (
