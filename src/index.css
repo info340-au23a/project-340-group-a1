@@ -234,10 +234,12 @@ table img {
 }
 
 .player-info {
+    font-family: 'Arial', sans-serif ;
     padding: 10px;
 }
 
 .player-name {
+    font-family: 'Arial', sans-serif ;
     font-size: 1.2em;
     font-weight: bold;
     color: #333; /* Dark text for contrast */
@@ -245,6 +247,7 @@ table img {
 }
 
 .player-details, .player-additional {
+    font-family: 'Arial', sans-serif ;
     font-size: 0.9em;
     color: #666; /* Slightly lighter text for less important details */
     margin-bottom: 5px;
