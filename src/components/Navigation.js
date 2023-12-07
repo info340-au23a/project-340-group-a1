@@ -34,10 +34,9 @@ export function NavBar(props) {
                     <li>
                         <Link to="/players">Players</Link>
                     </li>
-                    {/* Uncomment or add additional menu items as needed */}
-                    {/* <li>
-                        <Link to="/login">Login</Link>
-                    </li> */}
+                    <li>
+                        <Link to="/sign-in">Login</Link>
+                    </li>
                 </ul>
             </nav>
         </div>

@@ -4,12 +4,14 @@ import LeaguePage from './LeaguePage';
 import ScheduleTable from './SchedulePage.js';
 import MatchupTable from './MatchupPage.js';
 import PlayersPage from './PlayersPage.js';
+import SignInPage from './SignInPage.js';
 import { NavBar } from './Navigation.js';
 import { Footer } from './StaticComponents.js';
 
 import fakePlayerData from "../data/fake-player-data.json";
 import { Routes, Route } from 'react-router-dom';
 import { getDatabase, ref, set as firebaseSet, push as firebasePush, onValue } from 'firebase/database';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 function App(props) {
   /* KEY FOR API STUFF: a2ecfca222414704ac1b4666b877f1e8 */
@@ -17,6 +19,22 @@ function App(props) {
   const scheduleData = "https://api.sportsdata.io/v3/nfl/scores/json/SchedulesBasic/" + new Date().getFullYear() + "?key=a2ecfca222414704ac1b4666b877f1e8";
   // const teamPlayerData = "https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/" + /* team name */ + "?key=a2ecfca222414704ac1b4666b877f1e8"
   
+
+  //Sign-in Page
+  const [currentUser, setCurrentUser] = useState(null);
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, function(firebaseUser) {
+      console.log(firebaseUser);
+      if(firebaseUser === null) { //logged out
+        setCurrentUser(null);
+      } else { // logged in
+        firebaseUser.userId = firebaseUser.uid;
+        firebaseUser.userName = firebaseUser.displayName;
+        setCurrentUser(firebaseUser);
+      }
+    })
+  }, [])
 
   
 
@@ -44,6 +62,8 @@ function App(props) {
           <Route path="/schedule" element={<ScheduleTable />} />
           <Route path="/matchup" element={<MatchupTable />} />
           <Route path="/players" element={<PlayersPage playerData={playerData} addPlayerFunction={addPlayer}/>} />
+          <Route path="/sign-in" element={<SignInPage currentUser={currentUser} />
+        } />
       </Routes>
       <Footer />
     </div>
