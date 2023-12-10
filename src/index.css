@@ -8,6 +8,17 @@ html {
     height: 100%;
 }
 
+body {
+    margin: 0;
+}
+
+main {
+    margin: 0.5rem;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* navbar styling */
 nav {
     position: fixed;
@@ -48,6 +59,7 @@ nav a {
 /* end of navbar styling */
 
 h1 {
+    margin-left: 1rem;
     padding-top: 3.5rem;
     font-family: "Outfit", sans-serif;
 }
@@ -299,8 +311,18 @@ table img {
 }
 
 footer {
+    background-color: #023603;
+    color:#d3d3d3;
+    bottom: 0;
+    width: 100%;
     font-size: 0.7rem;
     text-align: left;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+footer a {
+    color:#69abf3
 }
 
 
@@ -323,6 +345,9 @@ footer {
     h1 {
         padding-top: 3rem;
     }
+    main {
+        margin: 1rem;
+    }
     .myTeam {
         padding: 1rem;
         font-size: 1rem;
@@ -334,7 +359,6 @@ footer {
         margin-left: 2rem;
     }
     footer {
-        margin-top: 1rem;
         font-size: 0.8rem;
     }
 }

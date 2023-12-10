@@ -23,7 +23,9 @@ const SignInPage = ({ setUser }) => {
   return (
     <div>
         <h1>Login</h1>
-        <StyledFirebaseAuth firebaseAuth={getAuth()} uiConfig={firebaseUIConfig} />
+        <main>
+          <StyledFirebaseAuth firebaseAuth={getAuth()} uiConfig={firebaseUIConfig} />
+        </main>
      </div>
   );
 };

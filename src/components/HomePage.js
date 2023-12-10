@@ -7,7 +7,7 @@ export default function HomePage(props) {
             <header className="homeHeader">
                 <h1>Fantasy Football</h1>
             </header>
-            <div className="homePageContent">
+            <main className="homePageContent">
                 <div className="myTeam">
                     <h2>My Team</h2>
                     <div className="myTeamSummary">
@@ -30,8 +30,8 @@ export default function HomePage(props) {
                 </div>
 
                 <HomeDashboard />
-                
-            </div>
+            </main>
+            
 
         </div>
     )
