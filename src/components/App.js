@@ -85,7 +85,7 @@ function App(props) {
           <Route path="/schedule" element={<ScheduleTable />} />
           <Route path="/matchup" element={<MatchupTable />} />
           <Route path="/players" element={<PlayersPage playerData={playerData} addPlayerFunction={addPlayer}/>} />
-          <Route path="/sign-in" element={<SignInPage currentUser={currentUser} />} />
+          <Route path="/sign-in" element={<SignInPage setUser={setCurrentUser} />} />
           <Route path="*" element={<Static.ErrorPage />} />        
       </Routes>
       <Static.Footer />
