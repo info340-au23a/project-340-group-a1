@@ -53,11 +53,13 @@ export default function PlayersPage(props) {
 
             {/* Dropdown for selecting a player */}
             <div className="player-select-dropdown">
-                <label htmlFor="playerSelect " className="dropdown-label">Choose a Player: </label>
+                <label htmlFor="playerSelect" className="dropdown-label">Choose a Player: </label>
                 <select id="playerSelect" value={selectedPlayer} onChange={handleDropdownChange}>
                     <option value="">Select a player</option>
                     {playerData.map(player => (
-                        <option key={player.playerName} value={player.playerName}>{player.playerName}</option>
+                        <option key={player.PlayerID} value={player.FirstName + ' ' + player.LastName}>
+                            {player.FirstName + ' ' + player.LastName}
+                        </option>
                     ))}
                 </select>
             </div>
@@ -67,7 +69,7 @@ export default function PlayersPage(props) {
                 <label htmlFor="teamSelect" className="dropdown-label">Choose a Team: </label>
                 <select id="teamSelect" value={selectedTeam} onChange={handleTeamDropdownChange}>
                     <option value="">Select a team</option>
-                    {Array.from(new Set(playerData.map(player => player.team)))
+                    {Array.from(new Set(playerData.map(player => player.Team)))
                          .map(team => (
                              <option key={team} value={team}>{team}</option>
                          ))}
