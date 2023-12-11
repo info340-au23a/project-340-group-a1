@@ -22,6 +22,7 @@ function App(props) {
   // State variables
   const [currentUser, setCurrentUser] = useState(null);
   const [fantasyDataArray, setFantasyDataArray] = useState([]);
+  const [playerData, setPlayerData] = useState([]);
   console.log(currentUser);
   console.log(fantasyDataArray);
 
@@ -61,14 +62,18 @@ function App(props) {
   }, []);
 
 
-  const addPlayer = (name, yards, touchdowns, position, team) => {
+  const addPlayer = (firstName, lastName, yards, touchdowns, position, team, height, weight) => {
     const newPlayer = {
-      "playerName": name,
-      "position": position,
-      "team": team,
-      "yards": yards,
-      "touchdowns": touchdowns,
-      "score": 21.0,
+      "FirstName": firstName,
+      "LastName": lastName,
+      "Position": position,
+      "Team": team,
+      "Yards": yards,
+      "Touchdowns": touchdowns,
+      "Height": height,
+      "Weight": weight,
+      "PlayerID": weight + yards,
+      "score": 21.0
     }
     const newPlayerData = [...playerData, newPlayer];
     setPlayerData(newPlayerData);
@@ -97,8 +102,6 @@ function App(props) {
 
     setPlayerData(allPlayerData);
   }
-
-  const [playerData, setPlayerData] = useState([]);
 
   // useEffect to call fetchPlayerData on component mount
   useEffect(() => {

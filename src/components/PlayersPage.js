@@ -36,12 +36,15 @@ export default function PlayersPage(props) {
     }
 
     const handleSubmit = (event) => {
-        const newPlayerName = document.getElementById('addPlayer').value;
+        const newPlayerFirstName = document.getElementById('addPlayerFirst').value;
+        const newPlayerLastName = document.getElementById('addPlayerLast').value;
         const newPlayerYards = document.getElementById('yards').value;
         const newPlayerTouchdowns = document.getElementById('touchdowns').value;
         const newPlayerPosition = document.getElementById('position').value;
         const newPlayerTeam = document.getElementById('team').value;
-        addPlayer(newPlayerName, newPlayerYards, newPlayerTouchdowns, newPlayerPosition, newPlayerTeam);
+        const newPlayerHeight = document.getElementById('height').value;
+        const newPlayerWeight = document.getElementById('weight').value;
+        addPlayer(newPlayerFirstName, newPlayerLastName, newPlayerYards, newPlayerTouchdowns, newPlayerPosition, newPlayerTeam, newPlayerHeight, newPlayerWeight);
     }
 
     return (
@@ -89,8 +92,12 @@ export default function PlayersPage(props) {
             <div>
             <form id="playerForm">
                 <div>
-                    <label htmlFor="addPlayer">Player Name:</label>
-                    <input type="text" id="addPlayer" placeholder="Enter player name" required/>
+                    <label htmlFor="addPlayerFirst">Player First Name:</label>
+                    <input type="text" id="addPlayerFirst" placeholder="Enter player first name" required/>
+                </div>
+                <div>
+                    <label htmlFor="addPlayerLast">Player Last Name:</label>
+                    <input type="text" id="addPlayerLast" placeholder="Enter player last name" required/>
                 </div>
                 <div>
                     <label htmlFor="yards">Yards:</label>
@@ -107,6 +114,14 @@ export default function PlayersPage(props) {
                 <div>
                     <label htmlFor="team">Team:</label>
                     <input type="text" id="team" placeholder="Enter team name" />
+                </div>
+                <div>
+                    <label htmlFor="height">Height:</label>
+                    <input type="text" id="height" placeholder="Enter height" />
+                </div>
+                <div>
+                    <label htmlFor="weight">Weight:</label>
+                    <input type="number" id="weight" placeholder="Enter weight" />
                 </div>
                 <button type="button" onClick={handleSubmit}>Add Player</button>
                 

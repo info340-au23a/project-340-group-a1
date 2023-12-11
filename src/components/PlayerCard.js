@@ -1,7 +1,7 @@
 import React from 'react';
 
-const PlayerCard = (props) => {
-    const { imageUrl, playerName, position, team, additionalInfo } = props;
+function PlayerCard(props) {
+    const { playerName, position, team, additionalInfo } = props;
     return (
         <div className="player-card">
             <div className="player-info">
