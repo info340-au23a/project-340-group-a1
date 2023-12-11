@@ -75,25 +75,34 @@ function App(props) {
   }
   
   //fetchPlayer Data
-  const fetchPlayerData = async (teamName) => {
-    const url = `https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/DAL?key=a2ecfca222414704ac1b4666b877f1e8`;
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+  // List of NFL team abbreviations
+  const nflTeams = ['ARI', 'ATL', 'BAL', 'BUF', 'CAR', 'CHI', 'CIN', 'CLE', 'DAL', 'DEN', 'DET', 'GB', 'HOU', 'IND', 'JAX', 'KC', 'LAC', 'LAR', 'LV', 'MIA', 'MIN', 'NE', 'NO', 'NYG', 'NYJ', 'PHI', 'PIT', 'SEA', 'SF', 'TB', 'TEN', 'WAS'];
+
+  const fetchPlayerData = async () => {
+    let allPlayerData = [];
+
+    for (const team of nflTeams) {
+      const url = `https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/${team}?key=a2ecfca222414704ac1b4666b877f1e8`;
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const teamData = await response.json();
+        allPlayerData = allPlayerData.concat(teamData);
+      } catch (error) {
+        console.error('There has been a problem with your fetch operation for team ' + team + ':', error);
       }
-      const data = await response.json();
-      setPlayerData(data);
-    } catch (error) {
-      console.error('There has been a problem with your fetch operation:', error);
     }
+
+    setPlayerData(allPlayerData);
   }
 
   const [playerData, setPlayerData] = useState([]);
 
+  // useEffect to call fetchPlayerData on component mount
   useEffect(() => {
-    const teamName = 'TeamName'; 
-    fetchPlayerData(teamName);
+    fetchPlayerData();
   }, []);
 
   return (
