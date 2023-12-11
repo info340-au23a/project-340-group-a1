@@ -246,9 +246,9 @@ table img {
 }
 
 .players-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Increase the min-width as needed */
-    grid-gap: 10px; /* Space between cards */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-items: center;
     align-content: start;
     padding: 10px;
@@ -261,15 +261,15 @@ table img {
     width: 100%; /* Ensure the card expands to fill the grid column */
     min-width: 200px; /* Prevent the card from being too narrow */
     width: calc(33.3% - 20px);
-    margin: 10px; /* Margin for spacing around the cards */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
     border: 1px solid #ddd; /* Light grey border */
     border-radius: 10px; /* Rounded corners */
     overflow: hidden; /* Ensures the content fits within the borders */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
-    margin: 10px auto;
+    margin: 10px;
     background-color: #f8f8f8; /* Light background */
     transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
+    flex-grow: 1;
 }
 
 

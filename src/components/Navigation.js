@@ -43,13 +43,10 @@ export function NavBar(props) {
                     <li>
                         <Link to="/players">Players</Link>
                     </li>
-                    <li>
-                        <Link to="/sign-in">Login</Link>
-                    </li>
                     {currentUser.userId &&
                         <>
                             <li>
-                                <Link to="/profile" className="nav-link">
+                                <Link to="/profile">
                                     <img src={currentUser.userImg} alt={currentUser.userName + " avatar"} />
                                 </Link>
                             </li>
@@ -57,6 +54,11 @@ export function NavBar(props) {
                                 <button className="btn btn-secondary ms-2" onClick={handleSignOut}>Sign Out</button>
                             </li>
                         </>
+                    }
+                    {!currentUser.userId &&
+                        <li>
+                            <Link to="/sign-in">Login</Link>
+                        </li>
                     }
                 </ul>
             </nav>

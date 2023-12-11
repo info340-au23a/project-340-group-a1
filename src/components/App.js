@@ -25,6 +25,7 @@ function App(props) {
   const [currentUser, setCurrentUser] = useState(TEST_USERS[0]);
   const [fantasyDataArray, setFantasyDataArray] = useState([]);
   const [playerData, setPlayerData] = useState([]);
+  console.log(TEST_USERS);
   console.log(currentUser);
   console.log(fantasyDataArray);
 
@@ -32,11 +33,14 @@ function App(props) {
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, function(firebaseUser) {
+      console.log(firebaseUser);
+
       if(firebaseUser === null) { //logged out
         setCurrentUser(TEST_USERS[0]);
       } else { // logged in
         firebaseUser.userId = firebaseUser.uid;
         firebaseUser.userName = firebaseUser.displayName;
+        firebaseUser.userImg = firebaseUser.photoURL || "/img/barstool.jpeg";
         setCurrentUser(firebaseUser);
       }
     })
@@ -120,7 +124,7 @@ function App(props) {
           <Route path="/schedule" element={<ScheduleTable />} />
           <Route path="/matchup" element={<MatchupTable />} />
           <Route path="/players" element={<PlayersPage playerData={playerData} addPlayerFunction={addPlayer}/>} />
-          <Route path="/sign-in" element={<SignInPage setUser={setCurrentUser} />} />
+          <Route path="/sign-in" element={<SignInPage currentUser={currentUser} setUser={setCurrentUser} />} />
           <Route path="*" element={<Static.ErrorPage />} />
 
       </Routes>

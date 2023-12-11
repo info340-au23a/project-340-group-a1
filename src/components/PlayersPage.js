@@ -99,9 +99,7 @@ export default function PlayersPage(props) {
             {/* Main content */}
             <main className="players-main">
                 <div className="players-container">
-                    <div className="players-row">
-                        {playerList}
-                    </div>
+                    {playerList}
                 </div>
             </main>
 
