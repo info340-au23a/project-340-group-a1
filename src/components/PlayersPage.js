@@ -12,22 +12,18 @@ export default function PlayersPage(props) {
         ? playerData.filter(player => player.playerName === selectedPlayer)
         : playerData;
 
-    const playerList = filteredPlayerData.map((player) => {
-        const name = player.playerName;
-        const position = player.position;
-        const team = player.team;
-        const imgUrl = player.imgUrl;
-         return (
-            <PlayerCard 
-                imageUrl={imgUrl}
-                 playerName={name}
-                 position={position}
-                team={team} 
-                 additionalInfo="Additional info or stats"
-                key={name}
-             />
-        );
-     });
+        const playerList = filteredPlayerData.map((player) => {
+            return (
+                <PlayerCard 
+                    imageUrl={player.UsaTodayHeadshotUrl}
+                    playerName={player.FirstName + ' ' + player.LastName}
+                    position={player.Position}
+                    team={player.Team}
+                    additionalInfo={`Height: ${player.Height}, Weight: ${player.Weight}`}
+                    key={player.PlayerID}
+                />
+            );
+        });
 
     
 
