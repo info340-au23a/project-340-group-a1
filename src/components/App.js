@@ -17,7 +17,7 @@ function App(props) {
   /* KEY FOR API STUFF: a2ecfca222414704ac1b4666b877f1e8 */
   // pulls schedule data for the current year
   const scheduleData = "https://api.sportsdata.io/v3/nfl/scores/json/SchedulesBasic/" + new Date().getFullYear() + "?key=a2ecfca222414704ac1b4666b877f1e8";
-  // const teamPlayerData = "https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/" + /* team name */ + "?key=a2ecfca222414704ac1b4666b877f1e8"
+  const teamPlayerData = "https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/" + /* team name */ + "?key=a2ecfca222414704ac1b4666b877f1e8"
   
   // State variables
   const [currentUser, setCurrentUser] = useState(null);
@@ -60,7 +60,6 @@ function App(props) {
     });
   }, []);
 
-  const [playerData, setPlayerData] = useState(fakePlayerData);
 
   const addPlayer = (name, yards, touchdowns, position, team) => {
     const newPlayer = {
@@ -74,6 +73,28 @@ function App(props) {
     const newPlayerData = [...playerData, newPlayer];
     setPlayerData(newPlayerData);
   }
+  
+  //fetchPlayer Data
+  const fetchPlayerData = async (teamName) => {
+    const url = `https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/DAL?key=a2ecfca222414704ac1b4666b877f1e8`;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setPlayerData(data);
+    } catch (error) {
+      console.error('There has been a problem with your fetch operation:', error);
+    }
+  }
+
+  const [playerData, setPlayerData] = useState([]);
+
+  useEffect(() => {
+    const teamName = 'TeamName'; 
+    fetchPlayerData(teamName);
+  }, []);
 
   return (
     <div>
@@ -86,7 +107,8 @@ function App(props) {
           <Route path="/matchup" element={<MatchupTable />} />
           <Route path="/players" element={<PlayersPage playerData={playerData} addPlayerFunction={addPlayer}/>} />
           <Route path="/sign-in" element={<SignInPage currentUser={currentUser} />} />
-          <Route path="*" element={<Static.ErrorPage />} />        
+          <Route path="*" element={<Static.ErrorPage />} />   
+               
       </Routes>
       <Static.Footer />
     </div>

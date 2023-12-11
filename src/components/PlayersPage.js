@@ -6,6 +6,7 @@ export default function PlayersPage(props) {
     const playerData = props.playerData;
 
     const [selectedPlayer, setSelectedPlayer] = useState('');
+    const [selectedTeam, setSelectedTeam] = useState('');
 
     const filteredPlayerData = selectedPlayer
         ? playerData.filter(player => player.playerName === selectedPlayer)
@@ -33,6 +34,11 @@ export default function PlayersPage(props) {
     const handleDropdownChange = (event) =>{
         setSelectedPlayer(event.target.value);
     }
+
+    const handleTeamDropdownChange = (event) => {
+        setSelectedTeam(event.target.value);
+    }
+
     const handleSubmit = (event) => {
         const newPlayerName = document.getElementById('addPlayer').value;
         const newPlayerYards = document.getElementById('yards').value;
@@ -57,6 +63,18 @@ export default function PlayersPage(props) {
                     {playerData.map(player => (
                         <option key={player.playerName} value={player.playerName}>{player.playerName}</option>
                     ))}
+                </select>
+            </div>
+
+            {/* Dropdown for selecting a team */}
+            <div className="team-select-dropdown">
+                <label htmlFor="teamSelect" className="dropdown-label">Choose a Team: </label>
+                <select id="teamSelect" value={selectedTeam} onChange={handleTeamDropdownChange}>
+                    <option value="">Select a team</option>
+                    {Array.from(new Set(playerData.map(player => player.team)))
+                         .map(team => (
+                             <option key={team} value={team}>{team}</option>
+                         ))}
                 </select>
             </div>
 
