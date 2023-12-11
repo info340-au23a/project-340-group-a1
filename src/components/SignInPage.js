@@ -1,5 +1,5 @@
-import React from 'react';
-import { getAuth, GoogleAuthProvider, EmailAuthProvider } from 'firebase/auth';
+import React, { useEffect } from 'react';
+import { getAuth, GoogleAuthProvider, EmailAuthProvider, onAuthStateChanged } from 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 const firebaseUIConfig = {
@@ -15,10 +15,13 @@ const firebaseUIConfig = {
 };
 
 const SignInPage = ({ setUser }) => {
-  const handleUserChange = (user) => {
-    // Handle the user change logic here, e.g., set user in the state
-    setUser(user);
-  };
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
+    });
+    return () => unsubscribe();
+  }, [setUser]);
 
   return (
     <div>
