@@ -12,13 +12,12 @@ export function NavBar(props) {
     };
 
     const handleSignOut = (event) => {
-        console.log("signing out");
         signOut(getAuth());
     }
 
     return (
         <div className="navigationBar">
-            <MobileLinks showMenu={showMenu} />
+            <MobileLinks showMenu={showMenu} currentUser={currentUser} signOutFunction={handleSignOut}/>
             <nav>
                 {/* Page Logo */}
                 <Link to="/home"><img src="imgs/FantasyFootballLogo.png" alt="Home" /></Link>
@@ -85,9 +84,21 @@ function MobileLinks(props) {
                 <li>
                     <Link to="/players">Players</Link>
                 </li>
-                <li>
-                    <Link to="/sign-in">Login</Link>
-                </li>
+                {props.currentUser.userId &&
+                    <>
+                        <li>
+                            <Link to="/profile">Profile</Link>
+                        </li>
+                        <li>
+                            <button onClick={props.signOutFunction}>Sign Out</button>
+                        </li>
+                    </>
+                }
+                {!props.currentUser.userId &&
+                    <li>
+                        <Link to="/sign-in">Login</Link>
+                    </li>
+                }
             </ul>
         )
     }

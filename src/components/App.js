@@ -5,11 +5,12 @@ import ScheduleTable from './SchedulePage.js';
 import MatchupTable from './MatchupPage.js';
 import PlayersPage from './PlayersPage.js';
 import SignInPage from './SignInPage.js';
+import ProfilePage from './ProfilePage.js';
 import { NavBar } from './Navigation.js';
 import * as Static from './StaticComponents.js';
 
 import fakePlayerData from "../data/fake-player-data.json";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { getDatabase, ref, set as firebaseSet, push as firebasePush, onValue } from 'firebase/database';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
@@ -25,22 +26,25 @@ function App(props) {
   const [currentUser, setCurrentUser] = useState(TEST_USERS[0]);
   const [fantasyDataArray, setFantasyDataArray] = useState([]);
   const [playerData, setPlayerData] = useState([]);
-  console.log(TEST_USERS);
-  console.log(currentUser);
-  console.log(fantasyDataArray);
+  console.log("currentUser: "+currentUser);
+  // console.log(fantasyDataArray);
+
+  const navigateTo = useNavigate(); //navigation hook
 
   //Sign-in Page
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, function(firebaseUser) {
-      console.log(firebaseUser);
+      console.log("firebaseUser: " + firebaseUser);
 
       if(firebaseUser === null) { //logged out
+        console.log("aaa")
+        console.log("setting to: " + TEST_USERS[0]);
         setCurrentUser(TEST_USERS[0]);
       } else { // logged in
         firebaseUser.userId = firebaseUser.uid;
         firebaseUser.userName = firebaseUser.displayName;
-        firebaseUser.userImg = firebaseUser.photoURL || "/img/barstool.jpeg";
+        firebaseUser.userImg = firebaseUser.photoURL || "imgs/barstool.jpeg";
         setCurrentUser(firebaseUser);
       }
     })
@@ -109,6 +113,13 @@ function App(props) {
     setPlayerData(allPlayerData);
   }
 
+  const changeUser = (userObj) => {
+    setCurrentUser(userObj);
+    if(userObj.userId !== null){
+      navigateTo('/'); //go to home after login
+    }
+  }
+
   // useEffect to call fetchPlayerData on component mount
   useEffect(() => {
     fetchPlayerData();
@@ -124,7 +135,8 @@ function App(props) {
           <Route path="/schedule" element={<ScheduleTable />} />
           <Route path="/matchup" element={<MatchupTable />} />
           <Route path="/players" element={<PlayersPage playerData={playerData} addPlayerFunction={addPlayer}/>} />
-          <Route path="/sign-in" element={<SignInPage currentUser={currentUser} setUser={setCurrentUser} />} />
+          <Route path="/profile" element={<ProfilePage currentUser={currentUser} />} />
+          <Route path="/sign-in" element={<SignInPage currentUser={currentUser} setUser={changeUser} />} />
           <Route path="*" element={<Static.ErrorPage />} />
 
       </Routes>

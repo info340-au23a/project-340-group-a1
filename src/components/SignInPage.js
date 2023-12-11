@@ -1,29 +1,23 @@
-import React, { useEffect } from 'react';
-import { getAuth, GoogleAuthProvider, EmailAuthProvider, onAuthStateChanged } from 'firebase/auth';
+import React from 'react';
+import { getAuth, GoogleAuthProvider, EmailAuthProvider } from 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 const firebaseUIConfig = {
   signInOptions: [
     GoogleAuthProvider.PROVIDER_ID,
-    { provider: EmailAuthProvider.PROVIDER_ID, requireDisplayName: true },
+    { provider: EmailAuthProvider.PROVIDER_ID, requiredDisplayName: true },
   ],
   signInFlow: 'popup',
   credentialHelper: 'none',
   callbacks: {
-    signInSuccessWithAuthResult: () => false,
-  },
+    signInSuccessWithAuthResult: () => {
+      return false;
+    }
+  }
 };
 
 export default function SignInPage(props) {
-  const setUser = props.setUser;
-
-  useEffect(() => {
-    const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-      setUser(firebaseUser);
-    });
-    return () => unsubscribe();
-  }, [setUser]);
+  const { currentUser, setUser } = props;
 
   return (
     <div>

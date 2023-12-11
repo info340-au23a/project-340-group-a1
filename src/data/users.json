@@ -1,7 +1,7 @@
 [
-  {"userId": null, "userName": "Log Out", "userImg": "/img/barstool.jpeg"},
-  {"userId": "trevor", "userName": "Trevor", "userImg": "/img/dinoLogo.png"},
-  {"userId": "tom", "userName": "Tom", "userImg": "/img/dogLogo.png"},
-  {"userId": "anshul", "userName": "Anshul", "userImg": "/img/dolphinLogo.png"},
-  {"userId": "christopher", "userName": "Christopher", "userImg": "/img/sandwichLogo.png"}
+  {"userId": null, "userName": "Log Out", "userImg": "imgs/barstool.jpeg"},
+  {"userId": "trevor", "userName": "Trevor", "userImg": "imgs/dinoLogo.png"},
+  {"userId": "tom", "userName": "Tom", "userImg": "imgs/dogLogo.png"},
+  {"userId": "anshul", "userName": "Anshul", "userImg": "imgs/dolphinLogo.png"},
+  {"userId": "christopher", "userName": "Christopher", "userImg": "imgs/sandwichLogo.png"}
 ]
