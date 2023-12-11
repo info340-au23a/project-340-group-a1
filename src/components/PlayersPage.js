@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import PlayerCard from './PlayerCard';
 
 export default function PlayersPage(props) {
@@ -9,23 +9,11 @@ export default function PlayersPage(props) {
     const [selectedTeam, setSelectedTeam] = useState('');
     const [selectedPosition, setSelectedPosition] = useState('');
 
-    const handleDropdownChange = (event) => {
-        setSelectedPlayer(event.target.value);
-    };
-
-    const handleTeamDropdownChange = (event) => {
-        setSelectedTeam(event.target.value);
-    };
-
-    const handlePositionDropdownChange = (event) => {
-        setSelectedPosition(event.target.value);
-    };
-
     const filteredPlayerData = playerData.filter(player => {
         const playerName = player.FirstName + ' ' + player.LastName;
         return (!selectedPlayer || playerName.toLowerCase() === selectedPlayer.toLowerCase()) && 
-               (!selectedTeam || player.Team === selectedTeam) &&
-               (!selectedPosition || player.Position === selectedPosition);
+        (!selectedTeam || player.Team === selectedTeam) &&
+        (!selectedPosition || player.Position === selectedPosition);
     });
 
     const playerList = filteredPlayerData.map((player) => {
@@ -40,6 +28,18 @@ export default function PlayersPage(props) {
         );
     });
 
+    const handleDropdownChange = (event) => {
+        setSelectedPlayer(event.target.value);
+    };
+
+    const handleTeamDropdownChange = (event) => {
+        setSelectedTeam(event.target.value);
+    };
+
+    const handlePositionDropdownChange = (event) => {
+        setSelectedPosition(event.target.value);
+    };
+
     const handleSubmit = (event) => {
         const newPlayerFirstName = document.getElementById('addPlayerFirst').value;
         const newPlayerLastName = document.getElementById('addPlayerLast').value;
@@ -50,10 +50,11 @@ export default function PlayersPage(props) {
         const newPlayerHeight = document.getElementById('height').value;
         const newPlayerWeight = document.getElementById('weight').value;
         addPlayer(newPlayerFirstName, newPlayerLastName, newPlayerYards, newPlayerTouchdowns, newPlayerPosition, newPlayerTeam, newPlayerHeight, newPlayerWeight);
-    };
+    }
 
     return (
         <div className="players-page">
+
             <header className="players-header">
                 <h1>Players</h1>
             </header>
@@ -95,6 +96,7 @@ export default function PlayersPage(props) {
                 </select>
             </div>
 
+            {/* Main content */}
             <main className="players-main">
                 <div className="players-container">
                     <div className="players-row">
@@ -103,13 +105,44 @@ export default function PlayersPage(props) {
                 </div>
             </main>
 
+
             <div>
-                {/* Form for adding a new player */}
-                <form id="playerForm">
-                    {/* Form fields */}
-                    {/* ... existing form fields ... */}
-                    <button type="button" onClick={handleSubmit}>Add Player</button>
-                </form>
+            <form id="playerForm">
+                <div>
+                    <label htmlFor="addPlayerFirst">Player First Name:</label>
+                    <input type="text" id="addPlayerFirst" placeholder="Enter player first name" required/>
+                </div>
+                <div>
+                    <label htmlFor="addPlayerLast">Player Last Name:</label>
+                    <input type="text" id="addPlayerLast" placeholder="Enter player last name" required/>
+                </div>
+                <div>
+                    <label htmlFor="yards">Yards:</label>
+                    <input type="number" id="yards" placeholder="Enter yards" />
+                </div>
+                <div>
+                    <label htmlFor="touchdowns">Touchdowns:</label>
+                    <input type="number" id="touchdowns" placeholder="Enter touchdowns" />
+                </div>
+                <div>
+                    <label htmlFor="position">Position:</label>
+                    <input type="text" id="position" placeholder="Enter position" />
+                </div>
+                <div>
+                    <label htmlFor="team">Team:</label>
+                    <input type="text" id="team" placeholder="Enter team name" />
+                </div>
+                <div>
+                    <label htmlFor="height">Height:</label>
+                    <input type="text" id="height" placeholder="Enter height" />
+                </div>
+                <div>
+                    <label htmlFor="weight">Weight:</label>
+                    <input type="number" id="weight" placeholder="Enter weight" />
+                </div>
+                <button type="button" onClick={handleSubmit}>Add Player</button>
+                
+            </form>
             </div>
         </div>
     );
