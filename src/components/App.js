@@ -13,6 +13,8 @@ import { Routes, Route } from 'react-router-dom';
 import { getDatabase, ref, set as firebaseSet, push as firebasePush, onValue } from 'firebase/database';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
+import TEST_USERS from '../data/users.json';
+
 function App(props) {
   /* KEY FOR API STUFF: a2ecfca222414704ac1b4666b877f1e8 */
   // pulls schedule data for the current year
@@ -20,7 +22,7 @@ function App(props) {
   const teamPlayerData = "https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/" + /* team name */ + "?key=a2ecfca222414704ac1b4666b877f1e8"
   
   // State variables
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(TEST_USERS[0]);
   const [fantasyDataArray, setFantasyDataArray] = useState([]);
   const [playerData, setPlayerData] = useState([]);
   console.log(currentUser);
@@ -110,9 +112,9 @@ function App(props) {
 
   return (
     <div>
-      <NavBar />
+      <NavBar currentUser={currentUser}/>
       <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route index element={<HomePage />} />
           <Route path="/home/:dashtab?" element={<HomePage />} />
           <Route path="/league" element={<LeaguePage />} />
           <Route path="/schedule" element={<ScheduleTable />} />

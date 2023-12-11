@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { getAuth, signOut } from 'firebase/auth';
 
 // Navigation Bar
 export function NavBar(props) {
+    const currentUser = props.currentUser;
     const [showMenu, setShowMenu] = useState(false);
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
+
+    const handleSignOut = (event) => {
+        console.log("signing out");
+        signOut(getAuth());
+    }
 
     return (
         <div className="navigationBar">
@@ -39,6 +46,18 @@ export function NavBar(props) {
                     <li>
                         <Link to="/sign-in">Login</Link>
                     </li>
+                    {currentUser.userId &&
+                        <>
+                            <li>
+                                <Link to="/profile" className="nav-link">
+                                    <img src={currentUser.userImg} alt={currentUser.userName + " avatar"} />
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <button className="btn btn-secondary ms-2" onClick={handleSignOut}>Sign Out</button>
+                            </li>
+                        </>
+                    }
                 </ul>
             </nav>
         </div>
@@ -46,7 +65,7 @@ export function NavBar(props) {
 }
 
 function MobileLinks(props) {
-    if(props.showMenu) {
+    if (props.showMenu) {
         return (
             <ul className="mobileLinks">
                 <li>

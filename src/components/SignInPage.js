@@ -14,7 +14,9 @@ const firebaseUIConfig = {
   },
 };
 
-const SignInPage = ({ setUser }) => {
+export default function SignInPage(props) {
+  const setUser = props.setUser;
+
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
@@ -32,5 +34,3 @@ const SignInPage = ({ setUser }) => {
      </div>
   );
 };
-
-export default SignInPage;
