@@ -17,7 +17,6 @@ export default function PlayersPage(props) {
     const playerList = filteredPlayerData.map((player) => {
         return (
             <PlayerCard 
-                imageUrl={player.UsaTodayHeadshotUrl}
                 playerName={player.FirstName + ' ' + player.LastName}
                 position={player.Position}
                 team={player.Team}
