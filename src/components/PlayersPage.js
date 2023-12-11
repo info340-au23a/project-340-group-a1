@@ -8,23 +8,24 @@ export default function PlayersPage(props) {
     const [selectedPlayer, setSelectedPlayer] = useState('');
     const [selectedTeam, setSelectedTeam] = useState('');
 
-    const filteredPlayerData = selectedPlayer
-        ? playerData.filter(player => player.playerName === selectedPlayer)
-        : playerData;
+    const filteredPlayerData = playerData.filter(player => {
+        const playerName = player.FirstName + ' ' + player.LastName;
+        return (!selectedPlayer || playerName.toLowerCase() === selectedPlayer.toLowerCase()) && 
+               (!selectedTeam || player.Team === selectedTeam);
+    });
 
-        const playerList = filteredPlayerData.map((player) => {
-            return (
-                <PlayerCard 
-                    imageUrl={player.UsaTodayHeadshotUrl}
-                    playerName={player.FirstName + ' ' + player.LastName}
-                    position={player.Position}
-                    team={player.Team}
-                    additionalInfo={`Height: ${player.Height}, Weight: ${player.Weight}`}
-                    key={player.PlayerID}
-                />
-            );
-        });
-
+    const playerList = filteredPlayerData.map((player) => {
+        return (
+            <PlayerCard 
+                imageUrl={player.UsaTodayHeadshotUrl}
+                playerName={player.FirstName + ' ' + player.LastName}
+                position={player.Position}
+                team={player.Team}
+                additionalInfo={`Height: ${player.Height}, Weight: ${player.Weight}`}
+                key={player.PlayerID}
+            />
+        );
+    });
     
 
     const handleDropdownChange = (event) =>{
