@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 // Navigation Bar
 export function NavBar(props) {
     const [showMenu, setShowMenu] = useState(false);
-    console.log(showMenu);
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
