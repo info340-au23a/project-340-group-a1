@@ -18,8 +18,8 @@ import TEST_USERS from '../data/users.json';
 function App(props) {
   /* KEY FOR API STUFF: a2ecfca222414704ac1b4666b877f1e8 */
   // pulls schedule data for the current year
-  const scheduleData = "https://api.sportsdata.io/v3/nfl/scores/json/SchedulesBasic/" + new Date().getFullYear() + "?key=a2ecfca222414704ac1b4666b877f1e8";
-  const teamPlayerData = "https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/" + /* team name */ + "?key=a2ecfca222414704ac1b4666b877f1e8"
+  const scheduleData = "https://api.sportsdata.io/v3/nfl/scores/json/SchedulesBasic/" + new Date().getFullYear() + "?key=6c483ba7d49746c5848dc41d70c44d19";
+  const teamPlayerData = "https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/" + /* team name */ + "?key=6c483ba7d49746c5848dc41d70c44d19"
   
   // State variables
   const [currentUser, setCurrentUser] = useState(TEST_USERS[0]);
@@ -89,7 +89,7 @@ function App(props) {
     let allPlayerData = [];
 
     for (const team of nflTeams) {
-      const url = `https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/${team}?key=a2ecfca222414704ac1b4666b877f1e8`;
+      const url = `https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/${team}?key=6c483ba7d49746c5848dc41d70c44d19`;
       try {
         const response = await fetch(url);
         if (!response.ok) {
