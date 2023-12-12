@@ -77,11 +77,24 @@ export default function ProfilePage(props) {
                 ) : (
                     <div className="profile-info">
                         <button className="profileBtn" onClick={handleEditButtonClick}>Edit Team Details</button>
-                        <div>
-                            <p><strong>Team Name:</strong> {teamData[0].TeamName}</p>
-                            <p><strong>League Name:</strong> {teamData[0].LeagueName}</p>
-                            <p><strong>Record:</strong> {teamData[0].Record}</p>
-                        </div>
+                        {teamData.length > 0 ? (
+                            <div>
+                                <p>
+                                    <strong>Team Name:</strong>{' '}
+                                    {teamData[0].TeamName}
+                                </p>
+                                <p>
+                                    <strong>League Name:</strong>{' '}
+                                    {teamData[0].LeagueName}
+                                </p>
+                                <p>
+                                    <strong>Record:</strong>{' '}
+                                    {teamData[0].Record}
+                                </p>
+                            </div>
+                        ) : (
+                            <p>No team data found for the current user.</p>
+                        )}
                     </div>
                 )}
             </main>
