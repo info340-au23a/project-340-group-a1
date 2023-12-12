@@ -36,7 +36,7 @@ export default function HomeDashboard(props) {
 }
 
 function HomeDashContent(props) {
-    const {dashTab} = props;
+    const { dashTab } = props;
     const contentToShow = () => {
         if(dashTab === "ranks"){
             return <RankTab />

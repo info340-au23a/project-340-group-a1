@@ -156,6 +156,15 @@ th {
     padding-right: 2rem;
 }
 
+.myTeam .myTeamName {
+    display: flex;
+    flex-direction: column;
+}
+
+.myTeam .myTeamName p {
+    text-align: center;
+}
+
 .myTeam .myTeamSummary {
     padding: 0;
     display: flex;
@@ -418,6 +427,18 @@ table img {
     transition-duration: 0.4s;
 }
 
+.player-add{
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-add button{
+    background-color: rgb(231, 249, 228);
+    color: #00420f;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
 .info-label label {
     font-family: "Public Sans", sans-serif;
 }
@@ -457,26 +478,6 @@ footer a {
 
 /* Styling for SMALL screens (598px+) */
 @media(min-width:598px){
-    .mobileLinks {
-        display: none;
-    }
-    nav {
-        justify-content: left;
-    }
-    nav .icon {
-        display: none;
-    }
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        padding-left: 40px;
-    }
-    nav li{
-        width: 90px;
-    }
-    nav li a{
-        text-align: center;
-    }
     main {
         margin: 1rem;
     }
@@ -497,9 +498,26 @@ footer a {
 
 /* Styling for MEDIUM screens (768px+) */
 @media(min-width:768px){
+    .mobileLinks {
+        display: none;
+    }
+    nav {
+        justify-content: left;
+    }
+    nav .icon {
+        display: none;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        padding-left: 40px;
+    }
     nav li{
-        width: 120px;
-    } 
+        width: 100px;
+    }
+    nav li a{
+        text-align: center;
+    }
     .homeHeader {
         background-image: url('../public/imgs/Football.jpg');
         background-size: 100%;
@@ -530,6 +548,10 @@ footer a {
     #playerForm button {
         margin: 1rem 0;
     }
+    .player-add button{
+        padding: .5rem 1rem;
+        margin: 0rem .5rem;
+    }
     footer {
         font-size: 0.9rem;
     }
@@ -537,6 +559,9 @@ footer a {
 
 /* Styling for LARGE screens (992px+) */
 @media(min-width:992px){
+    nav li{
+        width: 120px;
+    }
     footer {
         font-size: 1rem;
     }

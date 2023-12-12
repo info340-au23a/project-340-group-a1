@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signOut } from 'firebase/auth';
 
 // Navigation Bar
@@ -7,11 +7,14 @@ export function NavBar(props) {
     const currentUser = props.currentUser;
     const [showMenu, setShowMenu] = useState(false);
 
+    const navigateTo = useNavigate(); //navigation hook
+
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
 
     const handleSignOut = (event) => {
+        navigateTo('/');
         signOut(getAuth());
     }
 
@@ -23,7 +26,7 @@ export function NavBar(props) {
                 <Link to="/home"><img src="imgs/FantasyFootballLogo.png" alt="Home" /></Link>
 
                 {/* Hamburger Logo */}
-                <a href="#!" className="icon" onClick={toggleMenu}>
+                <a href="#!" aria-label="menu" className="icon" onClick={toggleMenu}>
                     <i className="fa fa-bars"></i>
                 </a>
 

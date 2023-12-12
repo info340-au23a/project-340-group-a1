@@ -2,6 +2,9 @@ import React from "react";
 import HomeDashboard from "./HomeDashboard.js";
 
 export default function HomePage(props) {
+    const { currentUserData } = props;
+    console.log(currentUserData);
+
     return(
         <div className="HomePage">
             <header className="homeHeader">
@@ -9,12 +12,14 @@ export default function HomePage(props) {
             </header>
             <main className="homePageContent">
                 <div className="myTeam">
-                    <h2>My Team</h2>
+                    <div className="myTeamName">
+                        <h2>My Team</h2>
+                    </div>
                     <div className="myTeamSummary">
                         <div className="myTeamRecord">
                             <h3>Record</h3>
                             {/* add record here */}
-                            <p>4-2-0</p>
+                            <p>4-2-1</p>
                         </div>
                         <div className="myTeamLastMatchup">
                             <h3>Last Matchup</h3>

@@ -4,6 +4,7 @@ import PlayerCard from './PlayerCard';
 export default function PlayersPage(props) {
     const addPlayer = props.addPlayerFunction;
     const playerData = props.playerData;
+    const addPlayerData = props.addToTeamFunction;
 
     const [selectedPlayer, setSelectedPlayer] = useState('');
     const [selectedTeam, setSelectedTeam] = useState('');
@@ -24,6 +25,7 @@ export default function PlayersPage(props) {
                 team={player.Team}
                 additionalInfo={`Height: ${player.Height}, Weight: ${player.Weight}`}
                 key={player.PlayerID}
+                addPlayerData={addPlayerData}
             />
         );
     });

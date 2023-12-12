@@ -16,15 +16,16 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import TEST_USERS from '../data/users.json';
 
 function App(props) {
-  /* KEY FOR API STUFF: a2ecfca222414704ac1b4666b877f1e8 */
-  // pulls schedule data for the current year
-  // const scheduleData = "https://api.sportsdata.io/v3/nfl/scores/json/SchedulesBasic/" + new Date().getFullYear() + "?key=a2ecfca222414704ac1b4666b877f1e8";
-  // const teamPlayerData = "https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/" + /* team name */ + "?key=a2ecfca222414704ac1b4666b877f1e8"
-
+ 
   // State variables
   const [currentUser, setCurrentUser] = useState(TEST_USERS[0]);
   const [fantasyDataArray, setFantasyDataArray] = useState([]);
   const [playerData, setPlayerData] = useState([]);
+
+  const userData = fantasyDataArray.filter((user) => {
+    return user.firebasekey === currentUser.uid;
+  })[0];
+  console.log(userData);
 
   //Sign-in Page
   useEffect(() => {
@@ -76,12 +77,24 @@ function App(props) {
 
     /// ADD message to database /// UPDATE DATABASE ///
     const db = getDatabase();
-    const AllUserDataRef = ref(db, "AllUserData/"+userObj.uid);
-    
+    const AllUserDataRef = ref(db, "AllUserData/" + userObj.uid);
+
     firebaseUpdate(AllUserDataRef, newUserObj);
 
   }
-  // changeTeamName(currentUser, "Trevor Team")
+
+  // updates realtime database with player information
+  const addPlayerData = (newPlayerName) => {
+    console.log(userData.PlayerList);
+
+    const playerObj = newPlayerName
+
+    /// ADD message to database /// UPDATE DATABASE ///
+    const db = getDatabase();
+    const AllUserDataRef = ref(db, "AllUserData/" + currentUser.userId + "/PlayerList");
+
+    firebaseUpdate(AllUserDataRef, { playerObj });
+  }
 
   const addPlayer = (firstName, lastName, yards, touchdowns, position, team, height, weight) => {
     const newPlayer = {
@@ -108,7 +121,7 @@ function App(props) {
     let allPlayerData = [];
 
     for (const team of nflTeams) {
-      const url = `https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/${team}?key=6c483ba7d49746c5848dc41d70c44d19`;
+      const url = `https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/${team}?key=f764a9ee4a1c4565bf1112a55006de65`;
       try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -134,11 +147,11 @@ function App(props) {
       <NavBar currentUser={currentUser} />
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="/home/:dashtab?" element={<HomePage />} />
+        <Route path="/home/:dashtab?" element={<HomePage currentUser={currentUser} fantasyDataArray={fantasyDataArray} />} />
         <Route path="/league" element={<LeaguePage />} />
         <Route path="/schedule" element={<ScheduleTable />} />
         <Route path="/matchup" element={<MatchupTable />} />
-        <Route path="/players" element={<PlayersPage playerData={playerData} addPlayerFunction={addPlayer} />} />
+        <Route path="/players" element={<PlayersPage playerData={playerData} addPlayerFunction={addPlayer} addToTeamFunction={addPlayerData} />} />
         <Route path="/profile" element={<ProfilePage currentUser={currentUser} fantasyDataArray={fantasyDataArray} changeTeamData={changeTeamData} />} />
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="*" element={<Static.ErrorPage />} />
