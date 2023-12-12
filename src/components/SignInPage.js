@@ -17,8 +17,6 @@ const firebaseUIConfig = {
 };
 
 export default function SignInPage(props) {
-  const { currentUser, setUser } = props;
-
   return (
     <div>
         <h1>Login</h1>

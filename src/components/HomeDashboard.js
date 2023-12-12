@@ -8,12 +8,22 @@ export default function HomeDashboard(props) {
     const paramsResult = useParams();
     const currentTab = paramsResult.dashtab;
 
+    const tabVal = () => {
+        if(currentTab === "ranks"){
+            return 1
+        } else if(currentTab === "my-stats"){
+            return 2
+        } else {
+            return 0
+        }
+    }
+
     return(
         <div className="dashboardContainer">
             <h2>Dashboard</h2>
             <div className="dashboard">
                 {/* Dash Tab links */}
-                <Tabs value={currentTab} variant="fullWidth">
+                <Tabs value={tabVal()} variant="fullWidth">
                     <Tab label="Overview" component={Link} to="/home/overview" />
                     <Tab label="Ranks" component={Link} to="/home/ranks" />
                     <Tab label="My Stats" component={Link} to="/home/my-stats" />
