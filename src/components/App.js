@@ -22,10 +22,6 @@ function App(props) {
   const [fantasyDataArray, setFantasyDataArray] = useState([]);
   const [playerData, setPlayerData] = useState([]);
 
-  const userData = fantasyDataArray.filter((user) => {
-    return user.firebasekey === currentUser.uid;
-  })[0];
-
   //Sign-in Page
   useEffect(() => {
     const auth = getAuth();
@@ -119,7 +115,7 @@ function App(props) {
     let allPlayerData = [];
 
     for (const team of nflTeams) {
-      const url = `https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/${team}?key=f764a9ee4a1c4565bf1112a55006de65`;
+      const url = `https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/${team}?key=30dd9e80cd68493f87935d1fc7d6f8f9`;
       try {
         const response = await fetch(url);
         if (!response.ok) {

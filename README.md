@@ -18,7 +18,7 @@ The Main Features of our app consist of:
     Sync your data in real-time between your phone, tablet, and computer.
 
 # Player Analytics 
-    In-depth player stats
+    In-depth player stats. Uses https://sportsdata.io/developers/api-documentation/nfl to get real time player data.
 
 # Live Score Updates
     View player performance stats as they happen.
