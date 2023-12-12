@@ -70,6 +70,7 @@ nav li a{
 
 nav button{
     background-color: rgb(37, 147, 22);
+    font-family: "Public Sans", sans-serif;
     color: #fffcd7;
     padding: .5rem 1rem;
     margin: 0rem .5rem;
@@ -102,6 +103,14 @@ nav button{
     font-family: "Public Sans", sans-serif;
     height: 1rem;
     opacity: 100%;
+}
+
+.mobileLinks button{
+    background-color: rgb(37, 147, 22);
+    font-family: "Public Sans", sans-serif;
+    color: #fffcd7;
+    border-radius: 5px;
+    transition-duration: 0.4s;
 }
 /* end of navbar styling */
 

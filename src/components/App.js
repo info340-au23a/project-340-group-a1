@@ -11,7 +11,7 @@ import * as Static from './StaticComponents.js';
 
 import fakePlayerData from "../data/fake-player-data.json";
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { getDatabase, ref, set as firebaseSet, push as firebasePush, onValue } from 'firebase/database';
+import { getDatabase, ref, update as firebaseUpdate, push as firebasePush, onValue } from 'firebase/database';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 import TEST_USERS from '../data/users.json';
@@ -38,8 +38,6 @@ function App(props) {
       console.log("firebaseUser: " + firebaseUser);
 
       if(firebaseUser === null) { //logged out
-        console.log("aaa")
-        console.log("setting to: " + TEST_USERS[0]);
         setCurrentUser(TEST_USERS[0]);
       } else { // logged in
         firebaseUser.userId = firebaseUser.uid;
@@ -71,6 +69,25 @@ function App(props) {
     });
   }, []);
 
+  // updates realtime database
+  const changeTeamName = (userObj, text) => {
+    const newUserObj = {
+      "userId": userObj.userId,
+      "userName": userObj.userName,
+      "userImg": userObj.userImg,
+      "TeamName": text
+    }
+    // const newTeamObj = [...messageStateArray, newMessageObj];
+    // setMessageStateArray(newMessageArray); //update state & rerender
+
+    /// ADD message to database /// UPDATE DATABASE ///
+    const db = getDatabase();
+    const AllUserDataRef = ref(db, "AllUserData");
+    
+    firebaseUpdate(AllUserDataRef, newUserObj);
+    
+  }
+  changeTeamName(currentUser, "Trevor Team");
 
   const addPlayer = (firstName, lastName, yards, touchdowns, position, team, height, weight) => {
     const newPlayer = {
