@@ -3,7 +3,6 @@ import HomeDashboard from "./HomeDashboard.js";
 
 export default function HomePage(props) {
     const { currentUserData } = props;
-    console.log(currentUserData);
 
     return(
         <div className="HomePage">

@@ -25,7 +25,6 @@ function App(props) {
   const userData = fantasyDataArray.filter((user) => {
     return user.firebasekey === currentUser.uid;
   })[0];
-  console.log(userData);
 
   //Sign-in Page
   useEffect(() => {
@@ -85,7 +84,6 @@ function App(props) {
 
   // updates realtime database with player information
   const addPlayerData = (newPlayerName) => {
-    console.log(userData.PlayerList);
 
     const playerObj = newPlayerName
 
