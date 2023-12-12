@@ -356,6 +356,16 @@ table img {
     background-color: white;
     cursor: pointer;
 }
+.position-select-dropdown select{
+    width: 200px;
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+}
 
 .player-select-dropdown  select:hover {
     background-color: #f2f2f2;
