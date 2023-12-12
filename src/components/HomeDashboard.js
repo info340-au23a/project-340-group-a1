@@ -1,23 +1,24 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+
 
 export default function HomeDashboard(props) {
     const paramsResult = useParams();
-
     const currentTab = paramsResult.dashtab;
-
 
     return(
         <div className="dashboardContainer">
             <h2>Dashboard</h2>
             <div className="dashboard">
                 {/* Dash Tab links */}
-                <div className="dash-tabs">
-                    <Link name="Overview" to={"/home/overview"}><button className="dash-tablinks" name="Overview">Overview</button></Link>
-                    <Link name="Ranks" to={"/home/ranks"}><button className="dash-tablinks" name="Ranks">Ranks</button></Link>
-                    <Link name="My-Stats" to={"/home/my-stats"}><button className="dash-tablinks" name="My Stats">My Stats</button></Link>
-                </div>
-                {/* <Dash Tab content */}
+                <Tabs value={currentTab} variant="fullWidth">
+                    <Tab label="Overview" component={Link} to="/home/overview" />
+                    <Tab label="Ranks" component={Link} to="/home/ranks" />
+                    <Tab label="My Stats" component={Link} to="/home/my-stats" />
+                </Tabs>
+                {/* Dash Tab content */}
                 <HomeDashContent dashTab={currentTab} />
             </div>
         </div>
@@ -35,9 +36,8 @@ function HomeDashContent(props) {
             return <OverviewTab />
         }
     }
-    
+
     return(
-        
         <div id={dashTab} className="dashcontent">
             {contentToShow()}
         </div>
