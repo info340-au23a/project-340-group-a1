@@ -70,24 +70,24 @@ function App(props) {
   }, []);
 
   // updates realtime database
-  const changeTeamName = (userObj, text) => {
-    const newUserObj = {
-      "userId": userObj.userId,
-      "userName": userObj.userName,
-      "userImg": userObj.userImg,
-      "TeamName": text
-    }
-    // const newTeamObj = [...messageStateArray, newMessageObj];
-    // setMessageStateArray(newMessageArray); //update state & rerender
+  // const changeTeamName = (userObj, text) => {
+  //   const newUserObj = {
+  //     "userId": userObj.userId,
+  //     "userName": userObj.userName,
+  //     "userImg": userObj.userImg,
+  //     "TeamName": text
+  //   }
+  //   // const newTeamObj = [...messageStateArray, newMessageObj];
+  //   // setMessageStateArray(newMessageArray); //update state & rerender
 
-    /// ADD message to database /// UPDATE DATABASE ///
-    const db = getDatabase();
-    const AllUserDataRef = ref(db, "AllUserData");
+  //   /// ADD message to database /// UPDATE DATABASE ///
+  //   const db = getDatabase();
+  //   const AllUserDataRef = ref(db, "AllUserData");
     
-    firebaseUpdate(AllUserDataRef, newUserObj);
+  //   firebaseUpdate(AllUserDataRef, newUserObj);
     
-  }
-  changeTeamName(currentUser, "Trevor Team");
+  // }
+  // changeTeamName(currentUser, "Trevor Team");
 
   const addPlayer = (firstName, lastName, yards, touchdowns, position, team, height, weight) => {
     const newPlayer = {
