@@ -407,6 +407,10 @@ footer a {
     color:#69abf3
 }
 
+.info-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
 
 /* Styling for SMALL screens (598px+) */
 @media(min-width:598px){
